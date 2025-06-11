@@ -4,118 +4,199 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>O Jardim Encantado da Aurora - 1 Ano</title>
-    <!-- Google Fonts: Dancing Script para títulos e Open Sans para texto corrido -->
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- Novas Google Fonts: Italianno para títulos, Poppins para subtítulos/elementos e Quicksand para textos -->
+    <link href="https://fonts.googleapis.com/css2?family=Italianno&family=Poppins:wght@300;400;500;600;700&family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <!-- Carrega o Tailwind CSS para estilização fácil e responsiva -->
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        /* Nova Paleta de Cores para o Jardim Encantado */
+        /* Nova Paleta de Cores para o Jardim Encantado das Borboletas */
         :root {
-            --color-soft-green: #A3B18A;
-            --color-blush-pink: #F4ACB7;
-            --color-lavender-purple: #B0A6F2;
-            --color-sky-blue: #D8F2FC;
-            --color-cream-white: #FDFDFD;
-            --color-dark-text: #4A4A4A;
+            --color-rosa-claro: #FADADD;
+            --color-verde-menta: #C3E8C3;
+            --color-lilas-suave: #D7C5F0;
+            --color-amarelo-palido: #FFF6BF;
+            --color-branco: #FFFFFF;
+            --color-texto-principal: #5C5C5C; /* Um cinza suave para legibilidade */
+            --color-destaque-claro: #A08CD0; /* Lilás mais vibrante para detalhes */
         }
 
-        .bg-soft-green { background-color: var(--color-soft-green); }
-        .text-soft-green { color: var(--color-soft-green); }
-        .border-soft-green { border-color: var(--color-soft-green); }
+        .bg-rosa-claro { background-color: var(--color-rosa-claro); }
+        .text-rosa-claro { color: var(--color-rosa-claro); }
+        .border-rosa-claro { border-color: var(--color-rosa-claro); }
 
-        .bg-blush-pink { background-color: var(--color-blush-pink); }
-        .text-blush-pink { color: var(--color-blush-pink); }
-        .border-blush-pink { border-color: var(--color-blush-pink); }
+        .bg-verde-menta { background-color: var(--color-verde-menta); }
+        .text-verde-menta { color: var(--color-verde-menta); }
+        .border-verde-menta { border-color: var(--color-verde-menta); }
 
-        .bg-lavender-purple { background-color: var(--color-lavender-purple); }
-        .text-lavender-purple { color: var(--color-lavender-purple); }
-        .border-lavender-purple { border-color: var(--color-lavender-purple); }
+        .bg-lilas-suave { background-color: var(--color-lilas-suave); }
+        .text-lilas-suave { color: var(--color-lilas-suave); }
+        .border-lilas-suave { border-color: var(--color-lilas-suave); }
 
-        .bg-sky-blue { background-color: var(--color-sky-blue); }
-        .text-sky-blue { color: var(--color-sky-blue); }
-        .border-sky-blue { border-color: var(--color-sky-blue); }
+        .bg-amarelo-palido { background-color: var(--color-amarelo-palido); }
+        .text-amarelo-palido { color: var(--color-amarelo-palido); }
+        .border-amarelo-palido { border-color: var(--color-amarelo-palido); }
 
-        .bg-cream-white { background-color: var(--color-cream-white); }
-        .text-dark-text { color: var(--color-dark-text); }
+        .text-texto-principal { color: var(--color-texto-principal); }
+        .text-destaque-claro { color: var(--color-destaque-claro); }
 
-        /* Gradientes para o tema Jardim Encantado */
-        .bg-gradient-green-pink {
-            background: linear-gradient(to bottom right, var(--color-soft-green), #8C9879);
+        /* Gradientes Suaves e Açucarados */
+        .bg-gradient-header {
+            background: linear-gradient(to right, var(--color-rosa-claro), var(--color-lilas-suave));
         }
-        .bg-gradient-pink-purple {
-            background: linear-gradient(to bottom right, var(--color-blush-pink), #e08f9f);
+        .bg-gradient-hero {
+            background: linear-gradient(to bottom, var(--color-verde-menta), var(--color-lilas-suave));
         }
-        .bg-gradient-blue-lavender {
-            background: linear-gradient(to bottom right, var(--color-sky-blue), #9b90e0);
+        .bg-gradient-section {
+            background: linear-gradient(to top left, var(--color-amarelo-palido), var(--color-rosa-claro));
+        }
+        .bg-gradient-button {
+            background: linear-gradient(to right, var(--color-lilas-suave), var(--color-destaque-claro));
+        }
+        .bg-gradient-button:hover {
+            background: linear-gradient(to left, var(--color-lilas-suave), var(--color-destaque-claro));
         }
 
         /* Tipografia */
-        .font-dancing-script { font-family: 'Dancing Script', cursive; }
-        .font-open-sans { font-family: 'Open Sans', sans-serif; }
+        .font-italianno { font-family: 'Italianno', cursive; }
+        .font-poppins { font-family: 'Poppins', sans-serif; }
+        .font-quicksand { font-family: 'Quicksand', sans-serif; }
 
         body {
-            font-family: 'Open Sans', sans-serif;
-            background-color: var(--color-cream-white); /* Fundo base suave */
-            overflow-x: hidden; /* Evita rolagem horizontal */
-            opacity: 0; /* Começa invisível para a animação de entrada */
-            animation: fadeIn 1s forwards; /* Animação de entrada */
+            font-family: 'Quicksand', sans-serif; /* Texto corrido */
+            background-color: var(--color-branco); /* Fundo branco base */
+            overflow-x: hidden;
+            opacity: 0;
+            animation: fadeIn 1s forwards;
         }
-        /* Animação de entrada */
         @keyframes fadeIn {
             from { opacity: 0; }
             to { opacity: 1; }
         }
 
-        /* Sombras mais suaves e arredondadas para o tema */
-        .shadow-soft {
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05), 0 3px 8px rgba(0, 0, 0, 0.03);
+        /* Sombras suaves e românticas */
+        .shadow-romantic {
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05), 0 2px 8px rgba(0, 0, 0, 0.03);
         }
-        .shadow-hover {
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08), 0 5px 12px rgba(0, 0, 0, 0.05);
+        .shadow-romantic-hover {
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1), 0 4px 12px rgba(0, 0, 0, 0.05);
         }
 
+        .rounded-flower {
+            border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%; /* Formato de flor */
+        }
+        .rounded-leaf {
+            border-radius: 50% 50% 50% 50% / 30% 70% 70% 30%; /* Formato de folha */
+        }
+        .rounded-petal {
+             border-radius: 60% 40% 60% 40% / 40% 60% 40% 60%;
+        }
+
+
         .countdown-digit {
-            @apply bg-white text-dark-text text-5xl font-extrabold p-6 rounded-3xl shadow-soft m-2;
-            font-family: 'Dancing Script', cursive;
+            @apply bg-white text-texto-principal text-5xl font-extrabold p-6 rounded-3xl shadow-romantic m-2;
+            font-family: 'Italianno', cursive; /* Fonte do título para dígitos */
             min-width: 120px;
             text-align: center;
             transition: all 0.3s ease-in-out;
+            border: 2px solid var(--color-amarelo-palido); /* Borda suave */
         }
         .countdown-digit:hover {
             transform: translateY(-5px) scale(1.02);
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1), 0 5px 10px rgba(0, 0, 0, 0.05);
         }
-
         .countdown-digit > div {
-            color: var(--color-blush-pink); /* Cor de destaque para as legendas */
-            font-weight: 600;
-            text-shadow: none; /* Remover sombra forte para um visual mais suave */
+            color: var(--color-lilas-suave); /* Cor de destaque para as legendas */
+            font-weight: 500;
+            text-shadow: none;
+            font-family: 'Poppins', sans-serif; /* Poppins para subtítulos/legendas */
         }
 
-        /* Animações de borboletas/brilhos */
-        @keyframes flutter {
-            0%, 100% { transform: translateY(0) rotate(0deg); }
-            25% { transform: translateY(-5px) rotate(5deg); }
-            50% { transform: translateY(0) rotate(0deg); }
-            75% { transform: translateY(5px) rotate(-5deg); }
+        /* Animações de borboletas/brilhos/folhas */
+        @keyframes butterfly-flutter {
+            0%, 100% { transform: translateY(0px) translateX(0px) rotate(0deg); }
+            25% { transform: translateY(-10px) translateX(5px) rotate(5deg); }
+            50% { transform: translateY(0px) translateX(0px) rotate(0deg); }
+            75% { transform: translateY(10px) translateX(-5px) rotate(-5deg); }
         }
-        .animate-flutter {
-            animation: flutter 4s ease-in-out infinite;
+        .animate-butterfly {
+            animation: butterfly-flutter 6s ease-in-out infinite;
         }
 
-        @keyframes sparkle {
-            0%, 100% { opacity: 0; transform: scale(0.5); }
-            50% { opacity: 1; transform: scale(1); }
+        @keyframes flower-bloom {
+            from { transform: scale(0.8) translateY(10px); opacity: 0; }
+            to { transform: scale(1) translateY(0); opacity: 1; }
         }
-        .animate-sparkle {
-            animation: sparkle 2s ease-in-out infinite;
+        .animate-flower-on-scroll {
+            /* Esta animação é para ser disparada via JS no scroll */
+            /* Por enquanto, defino um estilo base */
+            opacity: 0; /* Começa invisível */
+            transition: all 0.6s ease-out; /* Transição para quando JS muda a opacidade/transform */
+        }
+        .animate-flower-on-scroll.is-visible {
+            opacity: 1;
+            transform: scale(1) translateY(0);
+        }
+        
+        @keyframes sparkle-gentle {
+            0%, 100% { opacity: 0.2; transform: scale(0.8); }
+            50% { opacity: 0.8; transform: scale(1.1); }
+        }
+        .animate-sparkle-gentle {
+            animation: sparkle-gentle 3s ease-in-out infinite;
+        }
+
+        /* Detalhes de bordas e elementos superiores/inferiores */
+        .top-decoration-pattern {
+            width: 100%;
+            height: 80px; /* Altura do detalhe */
+            background-image: url('https://placehold.co/1200x80/D7C5F0/FFF6BF?text=PADRAO+TOPO'); /* Placeholder */
+            background-size: contain; /* Ajusta a imagem para caber na área, sem cortar */
+            background-repeat: repeat-x; /* Repete horizontalmente */
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 10;
+        }
+        .bottom-decoration-pattern {
+            width: 100%;
+            height: 80px; /* Altura do detalhe */
+            background-image: url('https://placehold.co/1200x80/C3E8C3/FADADD?text=PADRAO+FUNDO'); /* Placeholder */
+            background-size: contain;
+            background-repeat: repeat-x;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            z-index: 10;
+        }
+        /* Detalhes laterais (vinhas, flores, borboletas maiores) */
+        .left-side-decoration {
+            position: absolute;
+            top: 10%; /* Ajuste a posição vertical */
+            left: 0;
+            width: 120px; /* Largura do detalhe */
+            height: auto;
+            transform: translateX(-60%); /* Mais para fora */
+            z-index: 10;
+            opacity: 0.9;
+            pointer-events: none; /* Não interfere com cliques */
+        }
+        .right-side-decoration {
+            position: absolute;
+            top: 10%; /* Ajuste a posição vertical */
+            right: 0;
+            width: 120px; /* Largura do detalhe */
+            height: auto;
+            transform: translateX(60%); /* Mais para fora */
+            z-index: 10;
+            opacity: 0.9;
+            pointer-events: none; /* Não interfere com cliques */
         }
     </style>
 </head>
 <body class="flex flex-col min-h-screen">
     <!-- Controles de Música -->
-    <div class="fixed bottom-4 left-4 bg-white p-3 rounded-full shadow-soft z-50 flex items-center space-x-2">
-        <button id="musicToggleButton" class="bg-lavender-purple hover:bg-blush-pink text-white p-2 rounded-full shadow-soft transition duration-300 ease-in-out transform hover:scale-105">
+    <div class="fixed bottom-4 left-4 bg-white p-3 rounded-full shadow-romantic z-50 flex items-center space-x-2">
+        <button id="musicToggleButton" class="bg-lilas-suave hover:bg-destaque-claro text-white p-2 rounded-full shadow-romantic transition duration-300 ease-in-out transform hover:scale-105">
             <!-- Ícone de Play -->
             <svg id="playIcon" class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                 <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.025A1 1 0 0111 7.848v4.304a1 1 0 01-1.445.823L7.152 10.5a1 1 0 010-1.732l2.403-1.385z" clip-rule="evenodd"></path>
@@ -125,139 +206,137 @@
                 <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zM7 8a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 01-1 1H8a1 1 0 01-1-1V8z" clip-rule="evenodd"></path>
             </svg>
         </button>
-        <span id="musicStatus" class="text-sm text-dark-text">Música: Pausada</span>
+        <span id="musicStatus" class="text-sm text-texto-principal font-poppins">Música: Pausada</span>
     </div>
 
     <!-- Elemento de áudio escondido -->
     <audio id="backgroundMusic" loop>
-        <!-- SUBSTITUA PELO CAMINHO DA MÚSICA TEMA DE JARDIM/FADA -->
+        <!-- SUBSTITUA PELO CAMINHO DA MÚSICA TEMA DE JARDIM/FADA (MP3) -->
         <!-- Exemplo: <source src="./music/jardim_encantado.mp3" type="audio/mpeg"> -->
         <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-8.mp3" type="audio/mpeg">
         Seu navegador não suporta o elemento de áudio.
     </audio>
 
     <!-- Cabeçalho da Página -->
-    <header class="bg-gradient-green-pink text-white p-4 shadow-soft font-dancing-script rounded-b-3xl">
-        <div class="container mx-auto flex flex-col md:flex-row justify-between items-center">
-            <h1 class="text-4xl md:text-5xl font-bold mb-2 md:mb-0 text-dark-text drop-shadow-md flex items-center">
+    <header class="bg-gradient-header text-white p-4 shadow-romantic font-italianno rounded-b-3xl relative overflow-hidden">
+        <div class="top-decoration-pattern" style="background-image: url('https://placehold.co/1200x80/D7C5F0/FFF6BF?text=PADRAO+FLORAL+TOPO');"></div>
+        <div class="container mx-auto flex flex-col md:flex-row justify-between items-center z-20 relative">
+            <h1 class="text-4xl md:text-5xl font-bold mb-2 md:mb-0 text-texto-principal drop-shadow-sm flex items-center">
                 O Jardim Encantado da Aurora!
                 <!-- Ícone de borboleta SVG -->
-                <svg class="w-8 h-8 ml-3 text-lavender-purple animate-flutter" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 2a8 8 0 100 16 8 8 0 000-16zM5.586 7.414A1 1 0 005 8v4a1 1 0 00.586.908l4-2a1 1 0 000-1.816l-4-2z"></path></svg>
+                <svg class="w-8 h-8 ml-3 text-destaque-claro animate-butterfly" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 2a8 8 0 100 16 8 8 0 000-16zM5.586 7.414A1 1 0 005 8v4a1 1 0 00.586.908l4-2a1 1 0 000-1.816l-4-2z"></path></svg>
             </h1>
             <nav>
-                <ul class="flex flex-wrap justify-center md:space-x-6 text-lg text-dark-text">
-                    <li><a href="#inicio" class="hover:text-lavender-purple transition duration-300 rounded-md p-2 hover:bg-white hover:bg-opacity-20">Início</a></li>
-                    <li><a href="#detalhes" class="hover:text-lavender-purple transition duration-300 rounded-md p-2 hover:bg-white hover:bg-opacity-20">Detalhes</a></li>
-                    <li><a href="#presenca" class="hover:text-lavender-purple transition duration-300 rounded-md p-2 hover:bg-white hover:bg-opacity-20">Confirme</a></li>
-                    <li><a href="#fotos" class="hover:text-lavender-purple transition duration-300 rounded-md p-2 hover:bg-white hover:bg-opacity-20">Fotos</a></li>
-                    <li><a href="#recado" class="hover:text-lavender-purple transition duration-300 rounded-md p-2 hover:bg-white hover:bg-opacity-20">Recado</a></li>
+                <ul class="flex flex-wrap justify-center md:space-x-6 text-lg text-texto-principal font-poppins">
+                    <li><a href="#inicio" class="hover:text-lilas-suave transition duration-300 rounded-md p-2 hover:bg-white hover:bg-opacity-20">Início</a></li>
+                    <li><a href="#detalhes" class="hover:text-lilas-suave transition duration-300 rounded-md p-2 hover:bg-white hover:bg-opacity-20">Detalhes</a></li>
+                    <li><a href="#presenca" class="hover:text-lilas-suave transition duration-300 rounded-md p-2 hover:bg-white hover:bg-opacity-20">Confirme</a></li>
+                    <li><a href="#fotos" class="hover:text-lilas-suave transition duration-300 rounded-md p-2 hover:bg-white hover:bg-opacity-20">Fotos</a></li>
+                    <li><a href="#recado" class="hover:text-lilas-suave transition duration-300 rounded-md p-2 hover:bg-white hover:bg-opacity-20">Recado</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
     <!-- Seção de Boas-Vindas / Hero -->
-    <section id="inicio" class="relative bg-gradient-pink-purple text-center py-20 px-4 overflow-hidden shadow-soft rounded-b-3xl mb-8">
+    <section id="inicio" class="relative bg-gradient-hero text-center py-20 px-4 overflow-hidden shadow-romantic rounded-b-3xl mb-8">
         <div class="absolute inset-0 z-0 opacity-40">
-            <!-- SUBSTITUA PELA ARTE DE FUNDO DO JARDIM ENCANTADO -->
+            <!-- SUBSTITUA PELA ARTE DE FUNDO DO JARDIM ENCANTADO (IMAGEM GRANDE E SUAVE) -->
             <!-- Exemplo: <img src="./background-jardim.png" alt="Fundo de jardim com flores" class="w-full h-full object-cover"> -->
-            <img src="https://placehold.co/1200x600/D8F2FC/F4ACB7?text=Fundo+Jardim+Encantado" alt="Fundo de jardim encantado" class="w-full h-full object-cover">
+            <img src="https://placehold.co/1200x600/C3E8C3/D7C5F0?text=Fundo+Jardim+Encantado" alt="Fundo de jardim encantado" class="w-full h-full object-cover">
         </div>
-        <!-- Elementos decorativos de brilho e borboletas -->
-        <svg class="absolute top-10 left-10 w-6 h-6 text-sky-blue animate-sparkle z-10" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.696h3.462c.969 0 1.371 1.24.588 1.81l-2.817 2.046a1 1 0 00-.363 1.118l1.07 3.292c.3.921-.755 1.688-1.538 1.118l-2.817-2.046a1 1 0 00-1.176 0l-2.817 2.046c-.783.57-1.838-.197-1.538-1.118l1.07-3.292a1 1 0 00-.363-1.118L2.247 8.725c-.783-.57-.381-1.81.588-1.81h3.462a1 1 0 00.95-.696l1.07-3.292z"></path></svg>
-        <svg class="absolute bottom-20 right-20 w-8 h-8 text-blush-pink animate-sparkle z-10" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.696h3.462c.969 0 1.371 1.24.588 1.81l-2.817 2.046a1 1 0 00-.363 1.118l1.07 3.292c.3.921-.755 1.688-1.538 1.118l-2.817-2.046a1 1 0 00-1.176 0l-2.817 2.046c-.783.57-1.838-.197-1.538-1.118l1.07-3.292a1 1 0 00-.363-1.118L2.247 8.725c-.783-.57-.381-1.81.588-1.81h3.462a1 1 0 00.95-.696l1.07-3.292z"></path></svg>
+        <!-- Elementos decorativos - brilhos e borboletas flutuantes -->
+        <svg class="absolute top-10 left-10 w-6 h-6 text-amarelo-palido animate-sparkle-gentle z-10" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.696h3.462c.969 0 1.371 1.24.588 1.81l-2.817 2.046a1 1 0 00-.363 1.118l1.07 3.292c.3.921-.755 1.688-1.538 1.118l-2.817-2.046a1 1 0 00-1.176 0l-2.817 2.046c-.783.57-1.838-.197-1.538-1.118l1.07-3.292a1 1 0 00-.363-1.118L2.247 8.725c-.783-.57-.381-1.81.588-1.81h3.462a1 1 0 00.95-.696l1.07-3.292z"></path></svg>
+        <svg class="absolute bottom-20 right-20 w-8 h-8 text-lilas-suave animate-sparkle-gentle z-10" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.696h3.462c.969 0 1.371 1.24.588 1.81l-2.817 2.046a1 1 0 00-.363 1.118l1.07 3.292c.3.921-.755 1.688-1.538 1.118l-2.817-2.046a1 1 0 00-1.176 0l-2.817 2.046c-.783.57-1.838-.197-1.538-1.118l1.07-3.292a1 1 0 00-.363-1.118L2.247 8.725c-.783-.57-.381-1.81.588-1.81h3.462a1 1 0 00.95-.696l1.07-3.292z"></path></svg>
         
-        <!-- Novos elementos decorativos - borboletas e flores -->
-        <div class="absolute top-1/4 left-5 hidden md:block animate-flutter delay-100 z-10">
-            <!-- SUBSTITUA PELO CAMINHO DA SUA IMAGEM DE BORBOLETA -->
-            <img src="https://placehold.co/80x80/B0A6F2/FDFDFD?text=Borboleta" alt="Borboleta decorativa" class="w-20 md:w-24 drop-shadow-md" />
+        <!-- Detalhes laterais (vinhas, flores, borboletas maiores) -->
+        <div class="left-side-decoration">
+            <!-- SUBSTITUA PELA SUA IMAGEM DE BORBOLETA LATERAL ESQUERDA -->
+            <img src="https://placehold.co/100x150/C3E8C3/FADADD?text=Borboleta+Esq" alt="Borboleta decorativa esquerda" class="w-full h-auto animate-butterfly" />
         </div>
-        <div class="absolute top-1/4 right-5 hidden md:block animate-flutter delay-400 z-10">
-            <!-- SUBSTITUA PELO CAMINHO DA SUA IMAGEM DE FLOR -->
-            <img src="https://placehold.co/80x80/F4ACB7/FDFDFD?text=Flor" alt="Flor decorativa" class="w-20 md:w-24 drop-shadow-md" />
-        </div>
-        <div class="absolute bottom-1/4 left-1/4 animate-sparkle z-10">
-             <!-- SUBSTITUA PELO CAMINHO DA SUA IMAGEM DE BORBOLETA -->
-            <img src="https://placehold.co/60x60/A3B18A/FDFDFD?text=Borboleta" alt="Borboleta decorativa" class="w-16 h-16 drop-shadow-md" />
-        </div>
-        <div class="absolute top-1/4 right-1/4 animate-sparkle delay-500 z-10">
-            <svg class="w-8 h-8 text-lavender-purple" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.696h3.462c.969 0 1.371 1.24.588 1.81l-2.817 2.046a1 1 0 00-.363 1.118l1.07 3.292c.3.921-.755 1.688-1.538 1.118l-2.817-2.046a1 1 0 00-1.176 0l-2.817 2.046c-.783.57-1.838-.197-1.538-1.118l1.07-3.292a1 1 0 00-.363-1.118L2.247 8.725c-.783-.57-.381-1.81.588-1.81h3.462a1 1 0 00.95-.696l1.07-3.292z"></path></svg>
+        <div class="right-side-decoration">
+            <!-- SUBSTITUA PELA SUA IMAGEM DE BORBOLETA LATERAL DIREITA -->
+            <img src="https://placehold.co/100x150/FADADD/C3E8C3?text=Borboleta+Dir" alt="Borboleta decorativa direita" class="w-full h-auto animate-butterfly delay-300" />
         </div>
 
-
-        <div class="relative z-10 container mx-auto text-dark-text flex flex-col items-center">
-            <h2 class="text-5xl md:text-7xl font-dancing-script mb-4 text-sky-blue drop-shadow-md">
-                É O ANIVERSÁRIO DA AURORA!
+        <div class="relative z-10 container mx-auto text-texto-principal flex flex-col items-center">
+            <h2 class="text-5xl md:text-7xl font-italianno mb-4 text-destaque-claro drop-shadow-sm">
+                Onde flores nascem, sonhos acontecem...
             </h2>
-            <p class="text-xl md:text-2xl font-open-sans mb-8 max-w-2xl mx-auto drop-shadow-sm text-white">
+            <p class="text-xl md:text-2xl font-poppins mb-8 max-w-2xl mx-auto drop-shadow-sm text-texto-principal">
                 Preparem-se para a magia, a alegria e a diversão! O Jardim Encantado das Borboletas está esperando por você para celebrar o primeiro aninho da nossa Aurora!
             </p>
-            <!-- IMAGEM PRINCIPAL DO TEMA JARDIM ENCANTADO / BORBOLETAS -->
+            <!-- IMAGEM PRINCIPAL DO TEMA JARDIM ENCANTADO / BORBOLETAS (LOGO) -->
             <!-- SUBSTITUA PELO LOGO DO SEU TEMA JARDIM/BORBOLETAS -->
-            <!-- Exemplo: <img src="./logo-jardim-borboletas.png" alt="Logo Jardim Encantado da Aurora" class="max-w-[90%] h-auto drop-shadow-xl border-4 border-blush-pink rounded-full"> -->
             <div class="flex flex-col items-center justify-center mt-10">
-                <img src="https://placehold.co/400x400/F4ACB7/FDFDFD?text=LOGO+JARDIM+AURORA" onerror="this.onerror=null;this.src='https://placehold.co/400x400/F4ACB7/FDFDFD?text=LOGO+JARDIM+AURORA';" alt="Logo O Jardim Encantado da Aurora" class="max-w-[90%] h-auto shadow-soft border-4 border-lavender-purple rounded-full">
+                <img src="https://placehold.co/400x400/D7C5F0/FFF6BF?text=LOGO+JARDIM+AURORA" onerror="this.onerror=null;this.src='https://placehold.co/400x400/D7C5F0/FFF6BF?text=LOGO+JARDIM+AURORA';" alt="Logo O Jardim Encantado da Aurora" class="max-w-[90%] h-auto shadow-romantic border-4 border-amarelo-palido rounded-full">
             </div>
 
-            <p class="text-lg md:text-xl font-open-sans mt-8 max-w-xl mx-auto drop-shadow-sm text-white">
-                Com o coração cheio de alegria, convidamos você para compartilhar conosco este momento tão especial e mágico.
+            <p class="text-lg md:text-xl font-quicksand mt-8 max-w-xl mx-auto drop-shadow-sm text-texto-principal">
+                Neste jardim mora um sorriso, uma flor que nasceu para encantar: Aurora.
             </p>
         </div>
+        <!-- Elementos de Confete/Brilho Animados (substituindo por brilhos mais etéreos) -->
+        <svg class="absolute top-5 left-5 w-4 h-4 text-amarelo-palido animate-sparkle-gentle" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.696h3.462c.969 0 1.371 1.24.588 1.81l-2.817 2.046a1 1 0 00-.363 1.118l1.07 3.292c.3.921-.755 1.688-1.538 1.118l-2.817-2.046a1 1 0 00-1.176 0l-2.817 2.046c-.783.57-1.838-.197-1.538-1.118l1.07-3.292a1 1 0 00-.363-1.118L2.247 8.725c-.783-.57-.381-1.81.588-1.81h3.462a1 1 0 00.95-.696l1.07-3.292z"></path></svg>
+        <svg class="absolute bottom-5 right-5 w-5 h-5 text-verde-menta animate-sparkle-gentle delay-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.696h3.462c.969 0 1.371 1.24.588 1.81l-2.817 2.046a1 1 0 00-.363 1.118l1.07 3.292c.3.921-.755 1.688-1.538 1.118l-2.817-2.046a1 1 0 00-1.176 0l-2.817 2.046c-.783.57-1.838-.197-1.538-1.118l1.07-3.292a1 1 0 00-.363-1.118L2.247 8.725c-.783-.57-.381-1.81.588-1.81h3.462a1 1 0 00.95-.696l1.07-3.292z"></path></svg>
+        
+        <!-- Detalhe de fundo inferior da seção Hero -->
+        <div class="bottom-decoration-pattern" style="background-image: url('https://placehold.co/1200x80/C3E8C3/FADADD?text=PADRAO+FLORAL+FUNDO');"></div>
     </section>
 
     <!-- Seção de Contagem Regressiva -->
-    <section class="py-12 bg-gradient-pink-purple text-white text-center rounded-3xl mx-4 mb-8 shadow-soft" id="countdown-section">
-        <h3 class="text-4xl font-dancing-script mb-8 text-dark-text drop-shadow-sm">Faltam...</h3>
+    <section class="py-12 bg-gradient-section text-texto-principal text-center rounded-3xl mx-4 mb-8 shadow-romantic">
+        <h3 class="text-4xl font-italianno mb-8 text-destaque-claro drop-shadow-sm">Faltam...</h3>
         <div id="countdown" class="flex justify-center items-center flex-wrap">
             <div class="countdown-digit">
                 <span id="days">00</span>
-                <div class="text-base mt-2 font-open-sans">Dias</div>
+                <div class="text-base mt-2 font-poppins">Dias</div>
             </div>
             <div class="countdown-digit">
                 <span id="hours">00</span>
-                <div class="text-base mt-2 font-open-sans">Horas</div>
+                <div class="text-base mt-2 font-poppins">Horas</div>
             </div>
             <div class="countdown-digit">
                 <span id="minutes">00</span>
-                <div class="text-base mt-2 font-open-sans">Minutos</div>
+                <div class="text-base mt-2 font-poppins">Minutos</div>
             </div>
             <div class="countdown-digit">
                 <span id="seconds">00</span>
-                <div class="text-base mt-2 font-open-sans">Segundos</div>
+                <div class="text-base mt-2 font-poppins">Segundos</div>
             </div>
         </div>
-        <p id="event-message" class="text-2xl font-open-sans mt-8 text-white drop-shadow-sm hidden">
+        <p id="event-message" class="text-2xl font-poppins mt-8 text-texto-principal drop-shadow-sm hidden">
             A festa começou! 🎉
         </p>
     </section>
 
     <!-- Seção de Detalhes do Evento -->
-    <section id="detalhes" class="py-16 px-4 bg-cream-white">
+    <section id="detalhes" class="py-16 px-4 bg-branco">
         <div class="container mx-auto">
-            <h3 class="text-4xl font-dancing-script text-soft-green text-center mb-10 drop-shadow-sm">
+            <h3 class="text-4xl font-italianno text-lilas-suave text-center mb-10 drop-shadow-sm">
                 Detalhes do Encanto!
             </h3>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-                <div class="bg-gradient-blue-lavender p-8 rounded-3xl shadow-soft text-dark-text border-b-4 border-blush-pink">
-                    <h4 class="text-3xl font-dancing-script mb-4 text-white drop-shadow-sm">Quando será a magia?</h4>
-                    <p class="text-lg font-open-sans mb-4">
-                        <span class="font-bold text-dark-text">Data:</span> <span id="event-date">XX de Mês de XXXX</span>
+                <div class="bg-gradient-header p-8 rounded-3xl shadow-romantic text-texto-principal border-b-4 border-verde-menta">
+                    <h4 class="text-3xl font-poppins mb-4 text-texto-principal drop-shadow-sm">Quando será a magia?</h4>
+                    <p class="text-lg font-quicksand mb-4">
+                        <span class="font-bold text-destaque-claro">Data:</span> <span id="event-date">XX de Mês de XXXX</span>
                     </p>
-                    <p class="text-lg font-open-sans mb-4">
-                        <span class="font-bold text-dark-text">Horário:</span> <span id="event-time">XXhXX</span>
+                    <p class="text-lg font-quicksand mb-4">
+                        <span class="font-bold text-destaque-claro">Horário:</span> <span id="event-time">XXhXX</span>
                     </p>
-                    <p class="text-lg font-open-sans mb-6">
-                        <span class="font-bold text-dark-text">Local:</span> Em breve!
+                    <p class="text-lg font-quicksand mb-6">
+                        <span class="font-bold text-destaque-claro">Local:</span> Em breve!
                     </p>
-                    <p class="text-md font-open-sans text-white">
+                    <p class="text-md font-quicksand text-texto-principal">
                         O local do nosso jardim será anunciado em breve. Fiquem atentos!
                     </p>
                 </div>
-                <div class="rounded-3xl shadow-soft overflow-hidden border-b-4 border-lavender-purple">
+                <div class="rounded-3xl shadow-romantic overflow-hidden border-b-4 border-amarelo-palido">
                     <!-- Placeholder para Google Maps. Manter o iframe para estrutura, mas com aviso -->
                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3679.167882201943!2d-43.20963328552399!3d-22.90684678501062!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x997f5e3d7b8d1b%3A0x7d2f9d6c4d7e2f!2sRio%20de%20Janeiro%2C%20RJ%2C%20Brazil!5e0!3m2!1sen!2sbr!4v1678901234567!5m2!1sen!2sbr"
                             width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-                    <p class="text-center text-sm font-open-sans text-dark-text mt-2">
+                    <p class="text-center text-sm font-quicksand text-texto-principal mt-2">
                         O mapa do local estará disponível em breve!
                     </p>
                 </div>
@@ -266,104 +345,100 @@
     </section>
 
     <!-- Seção de Confirmação de Presença (RSVP) -->
-    <section id="presenca" class="py-16 px-4 bg-blush-pink text-dark-text rounded-3xl mx-4 mb-8 shadow-soft">
-        <div class="container mx-auto">
-            <h3 class="text-4xl font-dancing-script text-dark-text text-center mb-10 drop-shadow-sm">
+    <section id="presenca" class="py-16 px-4 bg-gradient-section text-texto-principal rounded-3xl mx-4 mb-8 shadow-romantic">
+        <h3 class="text-4xl font-italianno text-destaque-claro text-center mb-10 drop-shadow-sm">
                 Confirme Sua Presença no Jardim!
-            </h3>
-            <div class="bg-white p-8 rounded-3xl shadow-soft max-w-xl mx-auto border-t-4 border-soft-green">
-                <p class="text-center mb-6 font-open-sans text-lg text-dark-text">
-                    Para que possamos preparar o jardim com carinho, por favor, confirme sua presença.
-                </p>
-                <!-- O Formspree enviará as informações para o e-mail configurado. -->
-                <!-- POR FAVOR, SUBSTITUA 'YOUR_FORM_ID' PELO ID DO SEU FORMULARIO RSVP DO FORMSPREE -->
-                <form id="rsvp-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="space-y-4">
-                    <div>
-                        <label for="nome" class="block text-dark-text text-sm font-bold mb-2">Seu Nome Completo:</label>
-                        <input type="text" id="nome" name="Nome" required class="shadow appearance-none border rounded-lg w-full py-3 px-4 text-dark-text leading-tight focus:outline-none focus:ring-2 focus:ring-soft-green focus:border-transparent">
-                    </div>
-                    <div>
-                        <label for="email" class="block text-dark-text text-sm font-bold mb-2">Seu E-mail:</label>
-                        <input type="email" id="email" name="Email" required class="shadow appearance-none border rounded-lg w-full py-3 px-4 text-dark-text leading-tight focus:outline-none focus:ring-2 focus:ring-soft-green focus:border-transparent">
-                    </div>
-                    <div>
-                        <label for="acompanhantes" class="block text-dark-text text-sm font-bold mb-2">Número de Acompanhantes (máx. 3, incluindo crianças):</label>
-                        <input type="number" id="acompanhantes" name="Acompanhantes" min="0" max="3" value="0" required class="shadow appearance-none border rounded-lg w-full py-3 px-4 text-dark-text leading-tight focus:outline-none focus:ring-2 focus:ring-soft-green focus:border-transparent">
-                    </div>
-                    <button type="submit" class="bg-soft-green hover:bg-blush-pink text-white font-bold py-3 px-6 rounded-lg w-full text-lg transition duration-300 ease-in-out transform hover:scale-105 shadow-soft">
-                        Confirmar Presença
-                    </button>
-                </form>
-                <div id="rsvp-status-message" class="mt-4 text-center text-lg font-bold text-soft-green"></div>
-            </div>
+        </h3>
+        <div class="bg-white p-8 rounded-3xl shadow-romantic max-w-xl mx-auto border-t-4 border-verde-menta">
+            <p class="text-center mb-6 font-quicksand text-lg text-texto-principal">
+                Para que possamos preparar o jardim com carinho, por favor, confirme sua presença.
+            </p>
+            <!-- O Formspree enviará as informações para o e-mail configurado. -->
+            <!-- POR FAVOR, SUBSTITUA 'YOUR_FORM_ID' PELO ID DO SEU FORMULARIO RSVP DO FORMSPREE -->
+            <form id="rsvp-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="space-y-4">
+                <div>
+                    <label for="nome" class="block text-texto-principal text-sm font-poppins font-bold mb-2">Seu Nome Completo:</label>
+                    <input type="text" id="nome" name="Nome" required class="shadow appearance-none border rounded-lg w-full py-3 px-4 text-texto-principal leading-tight focus:outline-none focus:ring-2 focus:ring-verde-menta focus:border-transparent">
+                </div>
+                <div>
+                    <label for="email" class="block text-texto-principal text-sm font-poppins font-bold mb-2">Seu E-mail:</label>
+                    <input type="email" id="email" name="Email" required class="shadow appearance-none border rounded-lg w-full py-3 px-4 text-texto-principal leading-tight focus:outline-none focus:ring-2 focus:ring-verde-menta focus:border-transparent">
+                </div>
+                <div>
+                    <label for="acompanhantes" class="block text-texto-principal text-sm font-poppins font-bold mb-2">Número de Acompanhantes (máx. 3, incluindo crianças):</label>
+                    <input type="number" id="acompanhantes" name="Acompanhantes" min="0" max="3" value="0" required class="shadow appearance-none border rounded-lg w-full py-3 px-4 text-texto-principal leading-tight focus:outline-none focus:ring-2 focus:ring-verde-menta focus:border-transparent">
+                </div>
+                <button type="submit" class="bg-gradient-button text-white font-bold py-3 px-6 rounded-lg w-full text-lg transition duration-300 ease-in-out transform hover:scale-105 shadow-romantic">
+                    Confirmar Presença
+                </button>
+            </form>
+            <div id="rsvp-status-message" class="mt-4 text-center text-lg font-poppins font-bold text-destaque-claro"></div>
         </div>
     </section>
 
     <!-- Seção da Galeria de Fotos -->
-    <section id="fotos" class="py-16 px-4 bg-cream-white">
+    <section id="fotos" class="py-16 px-4 bg-branco">
         <div class="container mx-auto">
-            <h3 class="text-4xl font-dancing-script text-lavender-purple text-center mb-10 drop-shadow-sm">
+            <h3 class="text-4xl font-italianno text-lilas-suave text-center mb-10 drop-shadow-sm">
                 Galeria de Momentos Encantados
             </h3>
-            <p class="text-center text-lg font-open-sans mb-8 text-dark-text">
+            <p class="text-center text-lg font-quicksand mb-8 text-texto-principal">
                 Uma prévia da magia! Em breve, mais fotos da Aurora no seu jardim encantado.
             </p>
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
                 <!-- SUBSTITUA PELAS FOTOS REAIS DA AURORA NO TEMA JARDIM/BORBOLETAS -->
-                <div class="rounded-3xl overflow-hidden shadow-soft border border-blush-pink transform hover:scale-105 transition duration-300">
-                    <img src="https://placehold.co/400x300/A3B18A/FDFDFD?text=Foto+Aurora+1" alt="Foto da Aurora 1" class="w-full h-48 object-cover">
+                <div class="rounded-3xl overflow-hidden shadow-romantic border border-lilas-suave transform hover:scale-105 transition duration-300">
+                    <img src="https://placehold.co/400x300/FADADD/FFFFFF?text=Foto+Aurora+1" alt="Foto da Aurora 1" class="w-full h-48 object-cover">
                 </div>
-                <div class="rounded-3xl overflow-hidden shadow-soft border border-blush-pink transform hover:scale-105 transition duration-300">
-                    <img src="https://placehold.co/400x300/F4ACB7/FDFDFD?text=Foto+Aurora+2" alt="Foto da Aurora 2" class="w-full h-48 object-cover">
+                <div class="rounded-3xl overflow-hidden shadow-romantic border border-lilas-suave transform hover:scale-105 transition duration-300">
+                    <img src="https://placehold.co/400x300/C3E8C3/FFFFFF?text=Foto+Aurora+2" alt="Foto da Aurora 2" class="w-full h-48 object-cover">
                 </div>
-                <div class="rounded-3xl overflow-hidden shadow-soft border border-blush-pink transform hover:scale-105 transition duration-300">
-                    <img src="https://placehold.co/400x300/B0A6F2/FDFDFD?text=Foto+Aurora+3" alt="Foto da Aurora 3" class="w-full h-48 object-cover">
+                <div class="rounded-3xl overflow-hidden shadow-romantic border border-lilas-suave transform hover:scale-105 transition duration-300">
+                    <img src="https://placehold.co/400x300/D7C5F0/FFFFFF?text=Foto+Aurora+3" alt="Foto da Aurora 3" class="w-full h-48 object-cover">
                 </div>
-                <div class="rounded-3xl overflow-hidden shadow-soft border border-blush-pink transform hover:scale-105 transition duration-300">
-                    <img src="https://placehold.co/400x300/D8F2FC/FDFDFD?text=Foto+Aurora+4" alt="Foto da Aurora 4" class="w-full h-48 object-cover">
+                <div class="rounded-3xl overflow-hidden shadow-romantic border border-lilas-suave transform hover:scale-105 transition duration-300">
+                    <img src="https://placehold.co/400x300/FFF6BF/FFFFFF?text=Foto+Aurora+4" alt="Foto da Aurora 4" class="w-full h-48 object-cover">
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Seção de Recado para Aurora -->
-    <section id="recado" class="py-16 px-4 bg-lavender-purple text-dark-text rounded-3xl mx-4 mb-8 shadow-soft">
-        <div class="container mx-auto">
-            <h3 class="text-4xl font-dancing-script text-dark-text text-center mb-10 drop-shadow-sm">
-                Deixe um Recadinho para a Borboletinha!
-            </h3>
-            <div class="bg-white p-8 rounded-3xl shadow-soft max-w-xl mx-auto border-t-4 border-blush-pink">
-                <p class="text-center mb-6 font-open-sans text-lg text-dark-text">
-                    Querida Aurora, deixe aqui uma mensagem carinhosa para ela ler quando crescer.
-                </p>
-                <!-- POR FAVOR, SUBSTITUA 'YOUR_FORM_ID_MESSAGE' PELO ID DO SEU FORMULARIO DE MENSAGENS DO FORMSPREE -->
-                <form id="message-form" action="https://formspree.io/f/YOUR_FORM_ID_MESSAGE" method="POST" class="space-y-4">
-                    <div>
-                        <label for="remetente" class="block text-dark-text text-sm font-bold mb-2">Seu Nome (Opcional):</label>
-                        <input type="text" id="remetente" name="Remetente" class="shadow appearance-none border rounded-lg w-full py-3 px-4 text-dark-text leading-tight focus:outline-none focus:ring-2 focus:ring-blush-pink focus:border-transparent">
-                    </div>
-                    <div>
-                        <label for="mensagem" class="block text-dark-text text-sm font-bold mb-2">Sua Mensagem:</label>
-                        <textarea id="mensagem" name="Mensagem" rows="6" required class="shadow appearance-none border rounded-lg w-full py-3 px-4 text-dark-text leading-tight focus:outline-none focus:ring-2 focus:ring-blush-pink focus:border-transparent"></textarea>
-                    </div>
-                    <button type="submit" class="bg-soft-green hover:bg-blush-pink text-white font-bold py-3 px-6 rounded-lg w-full text-lg transition duration-300 ease-in-out transform hover:scale-105 shadow-soft">
-                        Enviar Recado
-                    </button>
-                </form>
-                <div id="message-status-message" class="mt-4 text-center text-lg font-bold text-soft-green hidden"></div>
-            </div>
+    <section id="recado" class="py-16 px-4 bg-gradient-section text-texto-principal rounded-3xl mx-4 mb-8 shadow-romantic">
+        <h3 class="text-4xl font-italianno text-destaque-claro text-center mb-10 drop-shadow-sm">
+            Deixe um Recadinho para a Borboletinha!
+        </h3>
+        <div class="bg-white p-8 rounded-3xl shadow-romantic max-w-xl mx-auto border-t-4 border-lilas-suave">
+            <p class="text-center mb-6 font-quicksand text-lg text-texto-principal">
+                Querida Aurora, deixe aqui uma mensagem carinhosa para ela ler quando crescer.
+            </p>
+            <!-- POR FAVOR, SUBSTITUA 'YOUR_FORM_ID_MESSAGE' PELO ID DO SEU FORMULARIO DE MENSAGENS DO FORMSPREE -->
+            <form id="message-form" action="https://formspree.io/f/YOUR_FORM_ID_MESSAGE" method="POST" class="space-y-4">
+                <div>
+                    <label for="remetente" class="block text-texto-principal text-sm font-poppins font-bold mb-2">Seu Nome (Opcional):</label>
+                    <input type="text" id="remetente" name="Remetente" class="shadow appearance-none border rounded-lg w-full py-3 px-4 text-texto-principal leading-tight focus:outline-none focus:ring-2 focus:ring-lilas-suave focus:border-transparent">
+                </div>
+                <div>
+                    <label for="mensagem" class="block text-texto-principal text-sm font-poppins font-bold mb-2">Sua Mensagem:</label>
+                    <textarea id="mensagem" name="Mensagem" rows="6" required class="shadow appearance-none border rounded-lg w-full py-3 px-4 text-texto-principal leading-tight focus:outline-none focus:ring-2 focus:ring-lilas-suave focus:border-transparent"></textarea>
+                </div>
+                <button type="submit" class="bg-gradient-button text-white font-bold py-3 px-6 rounded-lg w-full text-lg transition duration-300 ease-in-out transform hover:scale-105 shadow-romantic">
+                    Enviar Recado
+                </button>
+            </form>
+            <div id="message-status-message" class="mt-4 text-center text-lg font-poppins font-bold text-destaque-claro hidden"></div>
         </div>
     </section>
 
     <!-- Rodapé -->
-    <footer class="bg-dark-text text-white p-6 mt-12 rounded-t-3xl shadow-soft font-open-sans">
-        <div class="container mx-auto text-center text-sm">
-            <p class="mb-4">&copy; 2025 O Jardim Encantado da Aurora. Feito com magia.</p>
+    <footer class="bg-gradient-header text-white p-6 mt-12 rounded-t-3xl shadow-romantic font-quicksand relative overflow-hidden">
+        <div class="bottom-decoration-pattern" style="background-image: url('https://placehold.co/1200x80/C3E8C3/FADADD?text=PADRAO+FLORAL+FUNDO');"></div>
+        <div class="container mx-auto text-center text-sm z-20 relative">
+            <p class="mb-4">&copy; 2025 O Jardim Encantado da Aurora. Feito com magia e muito carinho.</p>
             <div class="flex justify-center space-x-6">
-                <!-- Links reais das redes sociais dos pais e contato -->
-                <a href="https://www.instagram.com/ovictormarketing" target="_blank" class="text-gray-400 hover:text-white transition duration-300">Instagram do Papai</a>
-                <a href="https://www.instagram.com/acarlaferreira_" target="_blank" class="text-gray-400 hover:text-white transition duration-300">Instagram da Mamãe</a>
-                <a href="tel:+5591982078165" class="text-gray-400 hover:text-white transition duration-300">Fale Conosco (91 98207-8165)</a>
+                <a href="https://www.instagram.com/ovictormarketing" target="_blank" class="text-texto-principal hover:text-lilas-suave transition duration-300">Instagram do Papai</a>
+                <a href="https://www.instagram.com/acarlaferreira_" target="_blank" class="text-texto-principal hover:text-lilas-suave transition duration-300">Instagram da Mamãe</a>
+                <a href="tel:+5591982078165" class="text-texto-principal hover:text-lilas-suave transition duration-300">Fale Conosco (91 98207-8165)</a>
             </div>
         </div>
     </footer>
@@ -394,6 +469,30 @@
             }
         });
 
+        // Efeito "Flores abrindo com scroll" (simplificado)
+        // Adiciona a classe 'is-visible' quando o elemento entra na viewport
+        const observerOptions = {
+            root: null, // viewport
+            rootMargin: '0px',
+            threshold: 0.1 // 10% do elemento visível
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    observer.unobserve(entry.target); // Para de observar depois de visível
+                }
+            });
+        }, observerOptions);
+
+        // Observa as imagens da galeria (você pode adicionar mais elementos com esta classe)
+        document.querySelectorAll('#fotos img').forEach(img => {
+            img.classList.add('animate-flower-on-scroll');
+            observer.observe(img);
+        });
+
+
         // Atualiza a contagem regressiva a cada segundo
         const countdownInterval = setInterval(() => {
             const now = new Date().getTime();
@@ -417,13 +516,13 @@
                 document.getElementById('countdown').innerHTML = ''; // Limpa os dígitos
                 document.getElementById('event-message').classList.remove('hidden'); // Mostra a mensagem
                 document.getElementById('event-message').innerText = 'A festa começou! 🎉';
-                document.getElementById('countdown-section').classList.remove('bg-gradient-pink-purple'); // Remove o gradiente
-                document.getElementById('countdown-section').classList.add('bg-soft-green'); // Adiciona uma cor alternativa
+                document.getElementById('countdown-section').classList.remove('bg-gradient-section');
+                document.getElementById('countdown-section').classList.add('bg-lilas-suave'); /* Altera para lilás quando termina */
             } else {
                 document.getElementById('countdown').classList.remove('hidden');
                 document.getElementById('event-message').classList.add('hidden');
-                document.getElementById('countdown-section').classList.remove('bg-soft-green');
-                document.getElementById('countdown-section').classList.add('bg-gradient-pink-purple');
+                document.getElementById('countdown-section').classList.remove('bg-lilas-suave');
+                document.getElementById('countdown-section').classList.add('bg-gradient-section');
             }
         }, 1000);
 
@@ -435,7 +534,7 @@
             rsvpStatusMessage.innerHTML = ''; // Limpa mensagens anteriores
             rsvpStatusMessage.classList.remove('hidden'); // Exibe a mensagem
             rsvpStatusMessage.innerText = 'Enviando...';
-            rsvpStatusMessage.style.color = '#3b82f6'; // Cor azul para "Enviando..."
+            rsvpStatusMessage.style.color = '#7B68EE'; /* Cor suave para "Enviando" */
 
             const nome = document.getElementById('nome').value;
             const acompanhantes = parseInt(document.getElementById('acompanhantes').value);
@@ -443,7 +542,7 @@
             // Validação adicional para o limite de acompanhantes
             if (acompanhantes > 3) {
                 rsvpStatusMessage.innerText = 'Máximo de 3 acompanhantes permitidos.';
-                rsvpStatusMessage.style.color = '#ef4444'; // Cor vermelha para erro
+                rsvpStatusMessage.style.color = '#DC143C'; /* Cor de erro */
                 return; // Impede o envio do formulário
             }
 
@@ -460,7 +559,7 @@
             if (response.ok) {
                 let message = `Obrigado, ${nome}! Sua presença e de ${acompanhantes} acompanhante(s) foi confirmada por e-mail.`;
                 rsvpStatusMessage.innerText = message;
-                rsvpStatusMessage.style.color = '#10b981'; // Cor verde para sucesso
+                rsvpStatusMessage.style.color = '#3CB371'; /* Cor de sucesso */
                 form.reset(); // Limpa o formulário
 
                 // Mensagem e link WhatsApp (opcional)
@@ -472,7 +571,7 @@
                 const whatsappBtn = document.createElement('a');
                 whatsappBtn.href = whatsappLink;
                 whatsappBtn.target = '_blank';
-                whatsappBtn.className = 'mt-4 inline-block bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-lg transition duration-300 ease-in-out transform hover:scale-105 shadow-soft';
+                whatsappBtn.className = 'mt-4 inline-block bg-verde-menta hover:bg-lilas-suave text-texto-principal font-bold py-2 px-4 rounded-lg transition duration-300 ease-in-out transform hover:scale-105 shadow-romantic';
                 whatsappBtn.innerHTML = 'Enviar Confirmação por WhatsApp <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" class="inline-block h-5 w-5 ml-2">';
                 
                 // Adiciona o botão WhatsApp após a mensagem de sucesso
@@ -483,10 +582,9 @@
             } else {
                 const errorData = await response.json();
                 rsvpStatusMessage.innerText = `Erro ao confirmar presença: ${errorData.errors ? errorData.errors.map(e => e.message).join(', ') : 'Tente novamente.'}`;
-                rsvpStatusMessage.style.color = '#ef4444'; // Cor vermelha para erro
+                rsvpStatusMessage.style.color = '#DC143C'; /* Cor de erro */
             }
 
-            // Esconde a mensagem após alguns segundos (apenas se não houver botão WhatsApp)
             if (!rsvpStatusMessage.querySelector('a')) {
                 setTimeout(() => {
                     rsvpStatusMessage.classList.add('hidden');
@@ -501,7 +599,7 @@
             const messageStatusMessage = document.getElementById('message-status-message');
             messageStatusMessage.classList.remove('hidden'); // Exibe a mensagem
             messageStatusMessage.innerText = 'Enviando recado...';
-            messageStatusMessage.style.color = '#3b82f6'; // Cor azul para "Enviando..."
+            messageStatusMessage.style.color = '#7B68EE'; /* Cor suave para "Enviando" */
 
             const form = event.target;
             const data = new FormData(form);
@@ -515,15 +613,14 @@
 
             if (response.ok) {
                 messageStatusMessage.innerText = 'Seu recado foi enviado com sucesso!';
-                messageStatusMessage.style.color = '#10b981'; // Cor verde para sucesso
+                messageStatusMessage.style.color = '#3CB371'; /* Cor de sucesso */
                 form.reset(); // Limpa o formulário
             } else {
                 const errorData = await response.json();
                 messageStatusMessage.innerText = `Erro ao enviar recado: ${errorData.errors ? errorData.errors.map(e => e.message).join(', ') : 'Tente novamente.'}`;
-                messageStatusMessage.style.color = '#ef4444'; // Cor vermelha para erro
+                messageStatusMessage.style.color = '#DC143C'; /* Cor de erro */
             }
 
-            // Esconde a mensagem após alguns segundos
             setTimeout(() => {
                 messageStatusMessage.classList.add('hidden');
             }, 5000);
