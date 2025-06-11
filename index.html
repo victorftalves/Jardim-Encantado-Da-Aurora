@@ -3,200 +3,204 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>O Jardim Encantado da Aurora - 1 Ano</title>
-    <!-- Novas Google Fonts: Italianno para títulos, Poppins para subtítulos/elementos e Quicksand para textos -->
-    <link href="https://fonts.googleapis.com/css2?family=Italianno&family=Poppins:wght@300;400;500;600;700&family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>O Conto de Fadas da Pequena Bailarina Aurora - 1 Ano</title>
+    <!-- Google Fonts: Playfair Display para títulos e Quicksand para textos -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <!-- Carrega o Tailwind CSS para estilização fácil e responsiva -->
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        /* Nova Paleta de Cores para o Jardim Encantado das Borboletas */
+        /* Paleta de Cores Refinada para o Conto de Fadas da Pequena Bailarina */
         :root {
-            --color-rosa-claro: #FADADD;
-            --color-verde-menta: #C3E8C3;
-            --color-lilas-suave: #D7C5F0;
-            --color-amarelo-palido: #FFF6BF;
-            --color-branco: #FFFFFF;
-            --color-texto-principal: #5C5C5C; /* Um cinza suave para legibilidade */
-            --color-destaque-claro: #A08CD0; /* Lilás mais vibrante para detalhes */
+            --color-ballet-pink: #F8E8EB; /* Rosa pastel suave */
+            --color-gold-dust: #CBB26A; /* Dourado suave e elegante */
+            --color-sky-dream: #E0F2F7; /* Azul celeste muito claro */
+            --color-pearl-white: #FCFCFC; /* Branco puro, fundo */
+            --color-velvet-grey: #3F3F3F; /* Cinza escuro aveludado para texto */
+            --color-rose-petal: #E6B9C5; /* Rosa de pétala, para destaques */
+            --color-lavender-mist: #D5D5EC; /* Névoa de lavanda, suave */
+            --color-dark-accent: #6C5B7B; /* Um roxo/vinho suave para contrastes e profundidade */
+            --color-sparkle: #FFDDC2; /* Cor para o brilho */
         }
 
-        .bg-rosa-claro { background-color: var(--color-rosa-claro); }
-        .text-rosa-claro { color: var(--color-rosa-claro); }
-        .border-rosa-claro { border-color: var(--color-rosa-claro); }
+        .bg-ballet-pink { background-color: var(--color-ballet-pink); }
+        .text-ballet-pink { color: var(--color-ballet-pink); }
+        .border-ballet-pink { border-color: var(--color-ballet-pink); }
 
-        .bg-verde-menta { background-color: var(--color-verde-menta); }
-        .text-verde-menta { color: var(--color-verde-menta); }
-        .border-verde-menta { border-color: var(--color-verde-menta); }
+        .bg-gold-dust { background-color: var(--color-gold-dust); }
+        .text-gold-dust { color: var(--color-gold-dust); }
+        .border-gold-dust { border-color: var(--color-gold-dust); }
 
-        .bg-lilas-suave { background-color: var(--color-lilas-suave); }
-        .text-lilas-suave { color: var(--color-lilas-suave); }
-        .border-lilas-suave { border-color: var(--color-lilas-suave); }
+        .bg-sky-dream { background-color: var(--color-sky-dream); }
+        .text-sky-dream { color: var(--color-sky-dream); }
+        .border-sky-dream { border-color: var(--color-sky-dream); }
 
-        .bg-amarelo-palido { background-color: var(--color-amarelo-palido); }
-        .text-amarelo-palido { color: var(--color-amarelo-palido); }
-        .border-amarelo-palido { border-color: var(--color-amarelo-palido); }
+        .bg-pearl-white { background-color: var(--color-pearl-white); }
+        .text-pearl-white { color: var(--color-pearl-white); }
+        .border-pearl-white { border-color: var(--color-pearl-white); }
 
-        .text-texto-principal { color: var(--color-texto-principal); }
-        .text-destaque-claro { color: var(--color-destaque-claro); }
+        .text-velvet-grey { color: var(--color-velvet-grey); }
 
-        /* Gradientes Suaves e Açucarados */
+        .bg-rose-petal { background-color: var(--color-rose-petal); }
+        .text-rose-petal { color: var(--color-rose-petal); }
+        .border-rose-petal { border-color: var(--color-rose-petal); }
+
+        .bg-lavender-mist { background-color: var(--color-lavender-mist); }
+        .text-lavender-mist { color: var(--color-lavender-mist); }
+        .border-lavender-mist { border-color: var(--color-lavender-mist); }
+
+        .bg-dark-accent { background-color: var(--color-dark-accent); }
+        .text-dark-accent { color: var(--color-dark-accent); }
+        .border-dark-accent { border-color: var(--color-dark-accent); }
+
+        /* Gradientes Suaves e Elegantes (Ajustados) */
         .bg-gradient-header {
-            background: linear-gradient(to right, var(--color-rosa-claro), var(--color-lilas-suave));
+            background: linear-gradient(to right, var(--color-ballet-pink), var(--color-sky-dream));
         }
         .bg-gradient-hero {
-            background: linear-gradient(to bottom, var(--color-verde-menta), var(--color-lilas-suave));
+            background: linear-gradient(to bottom, var(--color-sky-dream), var(--color-ballet-pink));
         }
         .bg-gradient-section {
-            background: linear-gradient(to top left, var(--color-amarelo-palido), var(--color-rosa-claro));
+            background: linear-gradient(to top left, var(--color-pearl-white), var(--color-sky-dream));
         }
         .bg-gradient-button {
-            background: linear-gradient(to right, var(--color-lilas-suave), var(--color-destaque-claro));
+            background: linear-gradient(to right, var(--color-rose-petal), var(--color-lavender-mist));
         }
         .bg-gradient-button:hover {
-            background: linear-gradient(to left, var(--color-lilas-suave), var(--color-destaque-claro));
+            background: linear-gradient(to left, var(--color-rose-petal), var(--color-lavender-mist));
         }
 
         /* Tipografia */
-        .font-italianno { font-family: 'Italianno', cursive; }
-        .font-poppins { font-family: 'Poppins', sans-serif; }
+        .font-playfair { font-family: 'Playfair Display', serif; }
         .font-quicksand { font-family: 'Quicksand', sans-serif; }
 
         body {
             font-family: 'Quicksand', sans-serif; /* Texto corrido */
-            background-color: var(--color-branco); /* Fundo branco base */
+            background-color: var(--color-pearl-white); /* Fundo branco perolado */
             overflow-x: hidden;
             opacity: 0;
             animation: fadeIn 1s forwards;
+            scroll-behavior: smooth; /* Rolagem suave para navegação */
+            cursor: url('https://raw.githubusercontent.com/google/material-design-icons/master/png/navigation/arrow_forward_ios/2x_web/ic_arrow_forward_ios_black_24dp.png'), auto; /* Placeholder: Substituir por cursor de sapatilha/varinha */
         }
         @keyframes fadeIn {
             from { opacity: 0; }
             to { opacity: 1; }
         }
 
-        /* Sombras suaves e românticas */
-        .shadow-romantic {
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05), 0 2px 8px rgba(0, 0, 0, 0.03);
+        /* Sombras mais suaves e etéreas (Refinadas) */
+        .shadow-graceful {
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.07), 0 3px 10px rgba(0, 0, 0, 0.04);
         }
-        .shadow-romantic-hover {
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1), 0 4px 12px rgba(0, 0, 0, 0.05);
+        .shadow-graceful-hover {
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12), 0 6px 18px rgba(0, 0, 0, 0.06);
         }
 
-        .rounded-flower {
-            border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%; /* Formato de flor */
-        }
-        .rounded-leaf {
-            border-radius: 50% 50% 50% 50% / 30% 70% 70% 30%; /* Formato de folha */
-        }
         .rounded-petal {
-             border-radius: 60% 40% 60% 40% / 40% 60% 40% 60%;
+            border-radius: 60% 40% 60% 40% / 40% 60% 40% 60%; /* Formato de pétala */
         }
-
+        .rounded-delicate {
+            border-radius: 3rem; /* Mais arredondado */
+        }
 
         .countdown-digit {
-            @apply bg-white text-texto-principal text-5xl font-extrabold p-6 rounded-3xl shadow-romantic m-2;
-            font-family: 'Italianno', cursive; /* Fonte do título para dígitos */
+            @apply bg-white text-velvet-grey text-5xl font-extrabold p-6 rounded-delicate shadow-graceful m-2;
+            font-family: 'Playfair Display', serif; /* Fonte do título para dígitos */
             min-width: 120px;
             text-align: center;
             transition: all 0.3s ease-in-out;
-            border: 2px solid var(--color-amarelo-palido); /* Borda suave */
+            border: 2px solid var(--color-gold-dust); /* Borda dourada suave */
+        }
+        .countdown-digit > span { /* Ajuste para o número do dígito */
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.1); /* Sombra para o número */
         }
         .countdown-digit:hover {
             transform: translateY(-5px) scale(1.02);
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1), 0 5px 10px rgba(0, 0, 0, 0.05);
         }
         .countdown-digit > div {
-            color: var(--color-lilas-suave); /* Cor de destaque para as legendas */
+            color: var(--color-rose-petal); /* Cor de destaque para as legendas */
             font-weight: 500;
             text-shadow: none;
-            font-family: 'Poppins', sans-serif; /* Poppins para subtítulos/legendas */
+            font-family: 'Quicksand', sans-serif; /* Quicksand para subtítulos/legendas */
         }
 
-        /* Animações de borboletas/brilhos/folhas */
-        @keyframes butterfly-flutter {
-            0%, 100% { transform: translateY(0px) translateX(0px) rotate(0deg); }
-            25% { transform: translateY(-10px) translateX(5px) rotate(5deg); }
-            50% { transform: translateY(0px) translateX(0px) rotate(0deg); }
-            75% { transform: translateY(10px) translateX(-5px) rotate(-5deg); }
+        /* Animações de balé/brilhos (Refinadas) */
+        @keyframes subtle-float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            25% { transform: translateY(-7px) rotate(3deg); } /* Ajuste sutil */
+            50% { transform: translateY(0px) rotate(0deg); }
+            75% { transform: translateY(7px) rotate(-3deg); } /* Ajuste sutil */
         }
-        .animate-butterfly {
-            animation: butterfly-flutter 6s ease-in-out infinite;
+        .animate-subtle-float {
+            animation: subtle-float 6s ease-in-out infinite; /* Mais suave e longo */
         }
 
-        @keyframes flower-bloom {
-            from { transform: scale(0.8) translateY(10px); opacity: 0; }
-            to { transform: scale(1) translateY(0); opacity: 1; }
-        }
-        .animate-flower-on-scroll {
-            /* Esta animação é para ser disparada via JS no scroll */
-            /* Por enquanto, defino um estilo base */
-            opacity: 0; /* Começa invisível */
-            transition: all 0.6s ease-out; /* Transição para quando JS muda a opacidade/transform */
-        }
-        .animate-flower-on-scroll.is-visible {
-            opacity: 1;
-            transform: scale(1) translateY(0);
-        }
-        
         @keyframes sparkle-gentle {
-            0%, 100% { opacity: 0.2; transform: scale(0.8); }
-            50% { opacity: 0.8; transform: scale(1.1); }
+            0%, 100% { opacity: 0.1; transform: scale(0.6); } /* Mais discreto no início */
+            50% { opacity: 0.7; transform: scale(1.2); } /* Mais notável no meio */
         }
         .animate-sparkle-gentle {
-            animation: sparkle-gentle 3s ease-in-out infinite;
+            animation: sparkle-gentle 4s ease-in-out infinite; /* Mais longo */
         }
-
-        /* Detalhes de bordas e elementos superiores/inferiores */
-        .top-decoration-pattern {
+        
+        /* Nova animação para elementos que aparecem ao rolar */
+        @keyframes slideInUp {
+            from { opacity: 0; transform: translateY(50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-on-scroll-effect {
+            opacity: 0; /* Invisível por padrão */
+            transition: all 0.8s ease-out;
+            transform: translateY(20px); /* Começa ligeiramente abaixo */
+        }
+        .animate-on-scroll-effect.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        /* Detalhes de bordas e elementos superiores/inferiores (Refinados) */
+        .decoration-pattern {
             width: 100%;
-            height: 80px; /* Altura do detalhe */
-            background-image: url('https://placehold.co/1200x80/D7C5F0/FFF6BF?text=PADRAO+TOPO'); /* Placeholder */
-            background-size: contain; /* Ajusta a imagem para caber na área, sem cortar */
-            background-repeat: repeat-x; /* Repete horizontalmente */
+            height: 100px; /* Altura do detalhe */
+            background-size: cover; /* Ajusta a imagem para caber na área, sem cortar */
+            background-repeat: no-repeat; /* Não repete, para usar uma imagem de faixa */
             position: absolute;
-            top: 0;
             left: 0;
             z-index: 10;
+        }
+        .top-decoration-pattern {
+            top: 0;
+            transform: translateY(-50%); /* Ajuste para sobrepor um pouco */
+            background-image: url('https://placehold.co/1200x100/D7F0FC/F2D2D7?text=PADRAO+TOPO+BALLET'); /* Placeholder */
         }
         .bottom-decoration-pattern {
-            width: 100%;
-            height: 80px; /* Altura do detalhe */
-            background-image: url('https://placehold.co/1200x80/C3E8C3/FADADD?text=PADRAO+FUNDO'); /* Placeholder */
-            background-size: contain;
-            background-repeat: repeat-x;
-            position: absolute;
             bottom: 0;
-            left: 0;
-            z-index: 10;
+            transform: translateY(50%); /* Ajuste para sobrepor um pouco */
+            background-image: url('https://placehold.co/1200x100/F2D2D7/D7F0FC?text=PADRAO+FUNDO+BALLET'); /* Placeholder */
         }
-        /* Detalhes laterais (vinhas, flores, borboletas maiores) */
-        .left-side-decoration {
+        /* Detalhes laterais (fitas, flores delicadas, etc) (Refinados) */
+        .side-decoration {
             position: absolute;
-            top: 10%; /* Ajuste a posição vertical */
-            left: 0;
-            width: 120px; /* Largura do detalhe */
+            top: 15%; /* Ajuste a posição vertical */
+            width: 180px; /* Largura do detalhe */
             height: auto;
-            transform: translateX(-60%); /* Mais para fora */
             z-index: 10;
             opacity: 0.9;
-            pointer-events: none; /* Não interfere com cliques */
+            pointer-events: none;
+        }
+        .left-side-decoration {
+            left: 0;
+            transform: translateX(-60%); /* Mais para fora */
         }
         .right-side-decoration {
-            position: absolute;
-            top: 10%; /* Ajuste a posição vertical */
             right: 0;
-            width: 120px; /* Largura do detalhe */
-            height: auto;
             transform: translateX(60%); /* Mais para fora */
-            z-index: 10;
-            opacity: 0.9;
-            pointer-events: none; /* Não interfere com cliques */
         }
     </style>
 </head>
 <body class="flex flex-col min-h-screen">
     <!-- Controles de Música -->
-    <div class="fixed bottom-4 left-4 bg-white p-3 rounded-full shadow-romantic z-50 flex items-center space-x-2">
-        <button id="musicToggleButton" class="bg-lilas-suave hover:bg-destaque-claro text-white p-2 rounded-full shadow-romantic transition duration-300 ease-in-out transform hover:scale-105">
+    <div class="fixed bottom-4 left-4 bg-white p-3 rounded-full shadow-graceful z-50 flex items-center space-x-2">
+        <button id="musicToggleButton" class="bg-rose-petal hover:bg-ballet-pink text-white p-2 rounded-full shadow-graceful transition duration-300 ease-in-out transform hover:scale-105">
             <!-- Ícone de Play -->
             <svg id="playIcon" class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                 <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.025A1 1 0 0111 7.848v4.304a1 1 0 01-1.445.823L7.152 10.5a1 1 0 010-1.732l2.403-1.385z" clip-rule="evenodd"></path>
@@ -206,137 +210,137 @@
                 <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zM7 8a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 01-1 1H8a1 1 0 01-1-1V8z" clip-rule="evenodd"></path>
             </svg>
         </button>
-        <span id="musicStatus" class="text-sm text-texto-principal font-poppins">Música: Pausada</span>
+        <span id="musicStatus" class="text-sm text-velvet-grey font-quicksand">Música: Pausada</span>
     </div>
 
     <!-- Elemento de áudio escondido -->
     <audio id="backgroundMusic" loop>
-        <!-- SUBSTITUA PELO CAMINHO DA MÚSICA TEMA DE JARDIM/FADA (MP3) -->
-        <!-- Exemplo: <source src="./music/jardim_encantado.mp3" type="audio/mpeg"> -->
-        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-8.mp3" type="audio/mpeg">
+        <!-- SUBSTITUA PELO CAMINHO DA MÚSICA TEMA DE BALÉ/CONTO DE FADAS (MP3) -->
+        <!-- Exemplo: <source src="./music/conto_de_fadas.mp3" type="audio/mpeg"> -->
+        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-12.mp3" type="audio/mpeg">
         Seu navegador não suporta o elemento de áudio.
     </audio>
 
     <!-- Cabeçalho da Página -->
-    <header class="bg-gradient-header text-white p-4 shadow-romantic font-italianno rounded-b-3xl relative overflow-hidden">
-        <div class="top-decoration-pattern" style="background-image: url('https://placehold.co/1200x80/D7C5F0/FFF6BF?text=PADRAO+FLORAL+TOPO');"></div>
+    <header class="bg-gradient-header text-white p-4 shadow-graceful font-playfair rounded-b-delicate relative overflow-hidden">
+        <div class="decoration-pattern top-decoration-pattern" style="background-image: url('https://placehold.co/1200x100/D7F0FC/F2D2D7?text=PADRAO+TOPO+BALLET');"></div>
         <div class="container mx-auto flex flex-col md:flex-row justify-between items-center z-20 relative">
-            <h1 class="text-4xl md:text-5xl font-bold mb-2 md:mb-0 text-texto-principal drop-shadow-sm flex items-center">
-                O Jardim Encantado da Aurora!
-                <!-- Ícone de borboleta SVG -->
-                <svg class="w-8 h-8 ml-3 text-destaque-claro animate-butterfly" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 2a8 8 0 100 16 8 8 0 000-16zM5.586 7.414A1 1 0 005 8v4a1 1 0 00.586.908l4-2a1 1 0 000-1.816l-4-2z"></path></svg>
+            <h1 class="text-4xl md:text-5xl font-bold mb-2 md:mb-0 text-gold-dust drop-shadow-sm flex items-center">
+                O Conto de Fadas da Aurora!
+                <!-- Ícone de coroa ou tiara SVG -->
+                <svg class="w-8 h-8 ml-3 text-gold-dust animate-subtle-float" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 2a3 3 0 00-3 3v.5a.5.5 0 01-1 0V5a4 4 0 014-4h2a4 4 0 014 4v.5a.5.5 0 01-1 0V5a3 3 0 00-3-3H10zM5 7.5a.5.5 0 01.5-.5h9a.5.5 0 01.5.5v.5a.5.5 0 01-.5.5h-9a.5.5 0 01-.5-.5V7.5zM10 13a3 3 0 100-6 3 3 0 000 6z"></path></svg>
             </h1>
             <nav>
-                <ul class="flex flex-wrap justify-center md:space-x-6 text-lg text-texto-principal font-poppins">
-                    <li><a href="#inicio" class="hover:text-lilas-suave transition duration-300 rounded-md p-2 hover:bg-white hover:bg-opacity-20">Início</a></li>
-                    <li><a href="#detalhes" class="hover:text-lilas-suave transition duration-300 rounded-md p-2 hover:bg-white hover:bg-opacity-20">Detalhes</a></li>
-                    <li><a href="#presenca" class="hover:text-lilas-suave transition duration-300 rounded-md p-2 hover:bg-white hover:bg-opacity-20">Confirme</a></li>
-                    <li><a href="#fotos" class="hover:text-lilas-suave transition duration-300 rounded-md p-2 hover:bg-white hover:bg-opacity-20">Fotos</a></li>
-                    <li><a href="#recado" class="hover:text-lilas-suave transition duration-300 rounded-md p-2 hover:bg-white hover:bg-opacity-20">Recado</a></li>
+                <ul class="flex flex-wrap justify-center md:space-x-6 text-lg text-velvet-grey font-quicksand">
+                    <li><a href="#inicio" class="hover:text-rose-petal transition duration-300 rounded-md p-2 hover:bg-white hover:bg-opacity-30">Início</a></li>
+                    <li><a href="#detalhes" class="hover:text-rose-petal transition duration-300 rounded-md p-2 hover:bg-white hover:bg-opacity-30">Detalhes</a></li>
+                    <li><a href="#presenca" class="hover:text-rose-petal transition duration-300 rounded-md p-2 hover:bg-white hover:bg-opacity-30">Confirme</a></li>
+                    <li><a href="#fotos" class="hover:text-rose-petal transition duration-300 rounded-md p-2 hover:bg-white hover:bg-opacity-30">Fotos</a></li>
+                    <li><a href="#recado" class="hover:text-rose-petal transition duration-300 rounded-md p-2 hover:bg-white hover:bg-opacity-30">Recado</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
     <!-- Seção de Boas-Vindas / Hero -->
-    <section id="inicio" class="relative bg-gradient-hero text-center py-20 px-4 overflow-hidden shadow-romantic rounded-b-3xl mb-8">
+    <section id="inicio" class="relative bg-gradient-hero text-center py-20 px-4 overflow-hidden shadow-graceful rounded-b-delicate mb-8">
         <div class="absolute inset-0 z-0 opacity-40">
-            <!-- SUBSTITUA PELA ARTE DE FUNDO DO JARDIM ENCANTADO (IMAGEM GRANDE E SUAVE) -->
-            <!-- Exemplo: <img src="./background-jardim.png" alt="Fundo de jardim com flores" class="w-full h-full object-cover"> -->
-            <img src="https://placehold.co/1200x600/C3E8C3/D7C5F0?text=Fundo+Jardim+Encantado" alt="Fundo de jardim encantado" class="w-full h-full object-cover">
+            <!-- SUBSTITUA PELA ARTE DE FUNDO DO CONTO DE FADAS (IMAGEM GRANDE E SUAVE) -->
+            <!-- Exemplo: <img src="./background-conto-fadas.png" alt="Fundo de conto de fadas" class="w-full h-full object-cover"> -->
+            <img src="https://placehold.co/1200x600/E0F2F7/F8E8EB?text=Fundo+Conto+de+Fadas" alt="Fundo de conto de fadas" class="w-full h-full object-cover">
         </div>
-        <!-- Elementos decorativos - brilhos e borboletas flutuantes -->
-        <svg class="absolute top-10 left-10 w-6 h-6 text-amarelo-palido animate-sparkle-gentle z-10" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.696h3.462c.969 0 1.371 1.24.588 1.81l-2.817 2.046a1 1 0 00-.363 1.118l1.07 3.292c.3.921-.755 1.688-1.538 1.118l-2.817-2.046a1 1 0 00-1.176 0l-2.817 2.046c-.783.57-1.838-.197-1.538-1.118l1.07-3.292a1 1 0 00-.363-1.118L2.247 8.725c-.783-.57-.381-1.81.588-1.81h3.462a1 1 0 00.95-.696l1.07-3.292z"></path></svg>
-        <svg class="absolute bottom-20 right-20 w-8 h-8 text-lilas-suave animate-sparkle-gentle z-10" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.696h3.462c.969 0 1.371 1.24.588 1.81l-2.817 2.046a1 1 0 00-.363 1.118l1.07 3.292c.3.921-.755 1.688-1.538 1.118l-2.817-2.046a1 1 0 00-1.176 0l-2.817 2.046c-.783.57-1.838-.197-1.538-1.118l1.07-3.292a1 1 0 00-.363-1.118L2.247 8.725c-.783-.57-.381-1.81.588-1.81h3.462a1 1 0 00.95-.696l1.07-3.292z"></path></svg>
+        <!-- Elementos decorativos - brilhos e estrelas cintilantes -->
+        <svg class="absolute top-10 left-10 w-6 h-6 text-gold-dust animate-sparkle-gentle z-10" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.696h3.462c.969 0 1.371 1.24.588 1.81l-2.817 2.046a1 1 0 00-.363 1.118l1.07 3.292c.3.921-.755 1.688-1.538 1.118l-2.817-2.046a1 1 0 00-1.176 0l-2.817 2.046c-.783.57-1.838-.197-1.538-1.118l1.07-3.292a1 1 0 00-.363-1.118L2.247 8.725c-.783-.57-.381-1.81.588-1.81h3.462a1 1 0 00.95-.696l1.07-3.292z"></path></svg>
+        <svg class="absolute bottom-20 right-20 w-8 h-8 text-ballet-pink animate-sparkle-gentle z-10" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.696h3.462c.969 0 1.371 1.24.588 1.81l-2.817 2.046a1 1 0 00-.363 1.118l1.07 3.292c.3.921-.755 1.688-1.538 1.118l-2.817-2.046a1 1 0 00-1.176 0l-2.817 2.046c-.783.57-1.838-.197-1.538-1.118l1.07-3.292a1 1 0 00-.363-1.118L2.247 8.725c-.783-.57-.381-1.81.588-1.81h3.462a1 1 0 00.95-.696l1.07-3.292z"></path></svg>
         
-        <!-- Detalhes laterais (vinhas, flores, borboletas maiores) -->
-        <div class="left-side-decoration">
-            <!-- SUBSTITUA PELA SUA IMAGEM DE BORBOLETA LATERAL ESQUERDA -->
-            <img src="https://placehold.co/100x150/C3E8C3/FADADD?text=Borboleta+Esq" alt="Borboleta decorativa esquerda" class="w-full h-auto animate-butterfly" />
+        <!-- Detalhes laterais (fitas, coroas, sapatilhas) -->
+        <div class="side-decoration left-side-decoration">
+            <!-- SUBSTITUA PELA SUA IMAGEM DE SAPATILHA/FITA/COROA LATERAL ESQUERDA -->
+            <img src="https://placehold.co/150x100/F2D2D7/CBB26A?text=Sapatilha+Esq" alt="Sapatilha de balé decorativa" class="w-full h-auto animate-subtle-float" />
         </div>
-        <div class="right-side-decoration">
-            <!-- SUBSTITUA PELA SUA IMAGEM DE BORBOLETA LATERAL DIREITA -->
-            <img src="https://placehold.co/100x150/FADADD/C3E8C3?text=Borboleta+Dir" alt="Borboleta decorativa direita" class="w-full h-auto animate-butterfly delay-300" />
+        <div class="side-decoration right-side-decoration">
+            <!-- SUBSTITUA PELA SUA IMAGEM DE SAPATILHA/FITA/COROA LATERAL DIREITA -->
+            <img src="https://placehold.co/150x100/CBB26A/F2D2D7?text=Coroa+Dir" alt="Coroa decorativa" class="w-full h-auto animate-subtle-float delay-300" />
         </div>
 
-        <div class="relative z-10 container mx-auto text-texto-principal flex flex-col items-center">
-            <h2 class="text-5xl md:text-7xl font-italianno mb-4 text-destaque-claro drop-shadow-sm">
-                Onde flores nascem, sonhos acontecem...
+        <div class="relative z-10 container mx-auto text-velvet-grey flex flex-col items-center">
+            <h2 class="text-5xl md:text-7xl font-playfair mb-4 text-gold-dust drop-shadow-sm">
+                Num palco de sonhos, sua graciosidade floresce...
             </h2>
-            <p class="text-xl md:text-2xl font-poppins mb-8 max-w-2xl mx-auto drop-shadow-sm text-texto-principal">
-                Preparem-se para a magia, a alegria e a diversão! O Jardim Encantado das Borboletas está esperando por você para celebrar o primeiro aninho da nossa Aurora!
+            <p class="text-xl md:text-2xl font-quicksand mb-8 max-w-2xl mx-auto drop-shadow-sm text-velvet-grey">
+                Preparem-se para o espetáculo, a magia e a beleza... A pequena bailarina Aurora celebra seu primeiro aninho!
             </p>
-            <!-- IMAGEM PRINCIPAL DO TEMA JARDIM ENCANTADO / BORBOLETAS (LOGO) -->
-            <!-- SUBSTITUA PELO LOGO DO SEU TEMA JARDIM/BORBOLETAS -->
+            <!-- IMAGEM PRINCIPAL DO TEMA BAILARINA (LOGO) -->
+            <!-- SUBSTITUA PELO LOGO DO SEU TEMA BAILARINA -->
             <div class="flex flex-col items-center justify-center mt-10">
-                <img src="https://placehold.co/400x400/D7C5F0/FFF6BF?text=LOGO+JARDIM+AURORA" onerror="this.onerror=null;this.src='https://placehold.co/400x400/D7C5F0/FFF6BF?text=LOGO+JARDIM+AURORA';" alt="Logo O Jardim Encantado da Aurora" class="max-w-[90%] h-auto shadow-romantic border-4 border-amarelo-palido rounded-full">
+                <img src="https://placehold.co/400x400/E0F2F7/F2D2D7?text=LOGO+BAILARINA+AURORA" onerror="this.onerror=null;this.src='https://placehold.co/400x400/E0F2F7/F2D2D7?text=LOGO+BAILARINA+AURORA';" alt="Logo O Conto de Fadas da Bailarina Aurora" class="max-w-[90%] h-auto shadow-graceful border-4 border-gold-dust rounded-full">
             </div>
 
-            <p class="text-lg md:text-xl font-quicksand mt-8 max-w-xl mx-auto drop-shadow-sm text-texto-principal">
-                Neste jardim mora um sorriso, uma flor que nasceu para encantar: Aurora.
+            <p class="text-lg md:text-xl font-quicksand mt-8 max-w-xl mx-auto drop-shadow-sm text-velvet-grey">
+                Com o coração cheio de alegria, convidamos você para compartilhar conosco este momento tão especial e mágico.
             </p>
         </div>
-        <!-- Elementos de Confete/Brilho Animados (substituindo por brilhos mais etéreos) -->
-        <svg class="absolute top-5 left-5 w-4 h-4 text-amarelo-palido animate-sparkle-gentle" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.696h3.462c.969 0 1.371 1.24.588 1.81l-2.817 2.046a1 1 0 00-.363 1.118l1.07 3.292c.3.921-.755 1.688-1.538 1.118l-2.817-2.046a1 1 0 00-1.176 0l-2.817 2.046c-.783.57-1.838-.197-1.538-1.118l1.07-3.292a1 1 0 00-.363-1.118L2.247 8.725c-.783-.57-.381-1.81.588-1.81h3.462a1 1 0 00.95-.696l1.07-3.292z"></path></svg>
-        <svg class="absolute bottom-5 right-5 w-5 h-5 text-verde-menta animate-sparkle-gentle delay-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.696h3.462c.969 0 1.371 1.24.588 1.81l-2.817 2.046a1 1 0 00-.363 1.118l1.07 3.292c.3.921-.755 1.688-1.538 1.118l-2.817-2.046a1 1 0 00-1.176 0l-2.817 2.046c-.783.57-1.838-.197-1.538-1.118l1.07-3.292a1 1 0 00-.363-1.118L2.247 8.725c-.783-.57-.381-1.81.588-1.81h3.462a1 1 0 00.95-.696l1.07-3.292z"></path></svg>
+        <!-- Elementos de brilho sutil -->
+        <svg class="absolute top-5 left-5 w-4 h-4 text-gold-dust animate-sparkle-gentle" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.696h3.462c.969 0 1.371 1.24.588 1.81l-2.817 2.046a1 1 0 00-.363 1.118l1.07 3.292c.3.921-.755 1.688-1.538 1.118l-2.817-2.046a1 1 0 00-1.176 0l-2.817 2.046c-.783.57-1.838-.197-1.538-1.118l1.07-3.292a1 1 0 00-.363-1.118L2.247 8.725c-.783-.57-.381-1.81.588-1.81h3.462a1 1 0 00.95-.696l1.07-3.292z"></path></svg>
+        <svg class="absolute bottom-5 right-5 w-5 h-5 text-ballet-pink animate-sparkle-gentle delay-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.696h3.462c.969 0 1.371 1.24.588 1.81l-2.817 2.046a1 1 0 00-.363 1.118l1.07 3.292c.3.921-.755 1.688-1.538 1.118l-2.817-2.046a1 1 0 00-1.176 0l-2.817 2.046c-.783.57-1.838-.197-1.538-1.118l1.07-3.292a1 1 0 00-.363-1.118L2.247 8.725c-.783-.57-.381-1.81.588-1.81h3.462a1 1 0 00.95-.696l1.07-3.292z"></path></svg>
         
         <!-- Detalhe de fundo inferior da seção Hero -->
-        <div class="bottom-decoration-pattern" style="background-image: url('https://placehold.co/1200x80/C3E8C3/FADADD?text=PADRAO+FLORAL+FUNDO');"></div>
+        <div class="decoration-pattern bottom-decoration-pattern" style="background-image: url('https://placehold.co/1200x100/F2D2D7/D7F0FC?text=PADRAO+FUNDO+BAILARINA');"></div>
     </section>
 
     <!-- Seção de Contagem Regressiva -->
-    <section class="py-12 bg-gradient-section text-texto-principal text-center rounded-3xl mx-4 mb-8 shadow-romantic">
-        <h3 class="text-4xl font-italianno mb-8 text-destaque-claro drop-shadow-sm">Faltam...</h3>
+    <section class="py-12 bg-gradient-section text-velvet-grey text-center rounded-delicate mx-4 mb-8 shadow-graceful">
+        <h3 class="text-4xl font-playfair mb-8 text-rose-petal drop-shadow-sm">Faltam...</h3>
         <div id="countdown" class="flex justify-center items-center flex-wrap">
             <div class="countdown-digit">
                 <span id="days">00</span>
-                <div class="text-base mt-2 font-poppins">Dias</div>
+                <div class="text-base mt-2 font-quicksand">Dias</div>
             </div>
             <div class="countdown-digit">
                 <span id="hours">00</span>
-                <div class="text-base mt-2 font-poppins">Horas</div>
+                <div class="text-base mt-2 font-quicksand">Horas</div>
             </div>
             <div class="countdown-digit">
                 <span id="minutes">00</span>
-                <div class="text-base mt-2 font-poppins">Minutos</div>
+                <div class="text-base mt-2 font-quicksand">Minutos</div>
             </div>
             <div class="countdown-digit">
                 <span id="seconds">00</span>
-                <div class="text-base mt-2 font-poppins">Segundos</div>
+                <div class="text-base mt-2 font-quicksand">Segundos</div>
             </div>
         </div>
-        <p id="event-message" class="text-2xl font-poppins mt-8 text-texto-principal drop-shadow-sm hidden">
+        <p id="event-message" class="text-2xl font-quicksand mt-8 text-velvet-grey drop-shadow-sm hidden">
             A festa começou! 🎉
         </p>
     </section>
 
     <!-- Seção de Detalhes do Evento -->
-    <section id="detalhes" class="py-16 px-4 bg-branco">
+    <section id="detalhes" class="py-16 px-4 bg-pearl-white">
         <div class="container mx-auto">
-            <h3 class="text-4xl font-italianno text-lilas-suave text-center mb-10 drop-shadow-sm">
-                Detalhes do Encanto!
+            <h3 class="text-4xl font-playfair text-lavender-mist text-center mb-10 drop-shadow-sm">
+                O Espetáculo Detalhado!
             </h3>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-                <div class="bg-gradient-header p-8 rounded-3xl shadow-romantic text-texto-principal border-b-4 border-verde-menta">
-                    <h4 class="text-3xl font-poppins mb-4 text-texto-principal drop-shadow-sm">Quando será a magia?</h4>
+                <div class="bg-gradient-header p-8 rounded-delicate shadow-graceful text-velvet-grey border-b-4 border-rose-petal">
+                    <h4 class="text-3xl font-quicksand mb-4 text-velvet-grey drop-shadow-sm">Quando será a magia?</h4>
                     <p class="text-lg font-quicksand mb-4">
-                        <span class="font-bold text-destaque-claro">Data:</span> <span id="event-date">XX de Mês de XXXX</span>
+                        <span class="font-bold text-rose-petal">Data:</span> <span id="event-date">XX de Mês de XXXX</span>
                     </p>
                     <p class="text-lg font-quicksand mb-4">
-                        <span class="font-bold text-destaque-claro">Horário:</span> <span id="event-time">XXhXX</span>
+                        <span class="font-bold text-rose-petal">Horário:</span> <span id="event-time">XXhXX</span>
                     </p>
                     <p class="text-lg font-quicksand mb-6">
-                        <span class="font-bold text-destaque-claro">Local:</span> Em breve!
+                        <span class="font-bold text-rose-petal">Local:</span> Em breve!
                     </p>
-                    <p class="text-md font-quicksand text-texto-principal">
-                        O local do nosso jardim será anunciado em breve. Fiquem atentos!
+                    <p class="text-md font-quicksand text-velvet-grey">
+                        O palco do nosso conto de fadas será anunciado em breve. Fiquem atentos!
                     </p>
                 </div>
-                <div class="rounded-3xl shadow-romantic overflow-hidden border-b-4 border-amarelo-palido">
+                <div class="rounded-delicate shadow-graceful overflow-hidden border-b-4 border-gold-dust">
                     <!-- Placeholder para Google Maps. Manter o iframe para estrutura, mas com aviso -->
                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3679.167882201943!2d-43.20963328552399!3d-22.90684678501062!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x997f5e3d7b8d1b%3A0x7d2f9d6c4d7e2f!2sRio%20de%20Janeiro%2C%20RJ%2C%20Brazil!5e0!3m2!1sen!2sbr!4v1678901234567!5m2!1sen!2sbr"
                             width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-                    <p class="text-center text-sm font-quicksand text-texto-principal mt-2">
+                    <p class="text-center text-sm font-quicksand text-velvet-grey mt-2">
                         O mapa do local estará disponível em breve!
                     </p>
                 </div>
@@ -345,100 +349,100 @@
     </section>
 
     <!-- Seção de Confirmação de Presença (RSVP) -->
-    <section id="presenca" class="py-16 px-4 bg-gradient-section text-texto-principal rounded-3xl mx-4 mb-8 shadow-romantic">
-        <h3 class="text-4xl font-italianno text-destaque-claro text-center mb-10 drop-shadow-sm">
-                Confirme Sua Presença no Jardim!
+    <section id="presenca" class="py-16 px-4 bg-gradient-section text-velvet-grey rounded-delicate mx-4 mb-8 shadow-graceful">
+        <h3 class="text-4xl font-playfair text-rose-petal text-center mb-10 drop-shadow-sm">
+                Confirme Sua Presença no Espetáculo!
         </h3>
-        <div class="bg-white p-8 rounded-3xl shadow-romantic max-w-xl mx-auto border-t-4 border-verde-menta">
-            <p class="text-center mb-6 font-quicksand text-lg text-texto-principal">
-                Para que possamos preparar o jardim com carinho, por favor, confirme sua presença.
+        <div class="bg-white p-8 rounded-delicate shadow-graceful max-w-xl mx-auto border-t-4 border-ballet-pink">
+            <p class="text-center mb-6 font-quicksand text-lg text-velvet-grey">
+                Para que possamos organizar o palco com carinho, por favor, confirme sua presença.
             </p>
             <!-- O Formspree enviará as informações para o e-mail configurado. -->
             <!-- POR FAVOR, SUBSTITUA 'YOUR_FORM_ID' PELO ID DO SEU FORMULARIO RSVP DO FORMSPREE -->
             <form id="rsvp-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="space-y-4">
                 <div>
-                    <label for="nome" class="block text-texto-principal text-sm font-poppins font-bold mb-2">Seu Nome Completo:</label>
-                    <input type="text" id="nome" name="Nome" required class="shadow appearance-none border rounded-lg w-full py-3 px-4 text-texto-principal leading-tight focus:outline-none focus:ring-2 focus:ring-verde-menta focus:border-transparent">
+                    <label for="nome" class="block text-velvet-grey text-sm font-quicksand font-bold mb-2">Seu Nome Completo:</label>
+                    <input type="text" id="nome" name="Nome" required class="shadow appearance-none border rounded-lg w-full py-3 px-4 text-velvet-grey leading-tight focus:outline-none focus:ring-2 focus:ring-rose-petal focus:border-transparent">
                 </div>
                 <div>
-                    <label for="email" class="block text-texto-principal text-sm font-poppins font-bold mb-2">Seu E-mail:</label>
-                    <input type="email" id="email" name="Email" required class="shadow appearance-none border rounded-lg w-full py-3 px-4 text-texto-principal leading-tight focus:outline-none focus:ring-2 focus:ring-verde-menta focus:border-transparent">
+                    <label for="email" class="block text-velvet-grey text-sm font-quicksand font-bold mb-2">Seu E-mail:</label>
+                    <input type="email" id="email" name="Email" required class="shadow appearance-none border rounded-lg w-full py-3 px-4 text-velvet-grey leading-tight focus:outline-none focus:ring-2 focus:ring-rose-petal focus:border-transparent">
                 </div>
                 <div>
-                    <label for="acompanhantes" class="block text-texto-principal text-sm font-poppins font-bold mb-2">Número de Acompanhantes (máx. 3, incluindo crianças):</label>
-                    <input type="number" id="acompanhantes" name="Acompanhantes" min="0" max="3" value="0" required class="shadow appearance-none border rounded-lg w-full py-3 px-4 text-texto-principal leading-tight focus:outline-none focus:ring-2 focus:ring-verde-menta focus:border-transparent">
+                    <label for="acompanhantes" class="block text-velvet-grey text-sm font-quicksand font-bold mb-2">Número de Acompanhantes (máx. 3, incluindo crianças):</label>
+                    <input type="number" id="acompanhantes" name="Acompanhantes" min="0" max="3" value="0" required class="shadow appearance-none border rounded-lg w-full py-3 px-4 text-velvet-grey leading-tight focus:outline-none focus:ring-2 focus:ring-rose-petal focus:border-transparent">
                 </div>
-                <button type="submit" class="bg-gradient-button text-white font-bold py-3 px-6 rounded-lg w-full text-lg transition duration-300 ease-in-out transform hover:scale-105 shadow-romantic">
+                <button type="submit" class="bg-gradient-button text-white font-bold py-3 px-6 rounded-lg w-full text-lg transition duration-300 ease-in-out transform hover:scale-105 shadow-graceful">
                     Confirmar Presença
                 </button>
             </form>
-            <div id="rsvp-status-message" class="mt-4 text-center text-lg font-poppins font-bold text-destaque-claro"></div>
+            <div id="rsvp-status-message" class="mt-4 text-center text-lg font-quicksand font-bold text-rose-petal"></div>
         </div>
     </section>
 
     <!-- Seção da Galeria de Fotos -->
-    <section id="fotos" class="py-16 px-4 bg-branco">
+    <section id="fotos" class="py-16 px-4 bg-pearl-white">
         <div class="container mx-auto">
-            <h3 class="text-4xl font-italianno text-lilas-suave text-center mb-10 drop-shadow-sm">
-                Galeria de Momentos Encantados
+            <h3 class="text-4xl font-playfair text-lavender-mist text-center mb-10 drop-shadow-sm">
+                Galeria de Momentos de Graciosidade
             </h3>
-            <p class="text-center text-lg font-quicksand mb-8 text-texto-principal">
-                Uma prévia da magia! Em breve, mais fotos da Aurora no seu jardim encantado.
+            <p class="text-center text-lg font-quicksand mb-8 text-velvet-grey">
+                Uma prévia da magia! Em breve, mais fotos da nossa bailarina Aurora em seu conto de fadas.
             </p>
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-                <!-- SUBSTITUA PELAS FOTOS REAIS DA AURORA NO TEMA JARDIM/BORBOLETAS -->
-                <div class="rounded-3xl overflow-hidden shadow-romantic border border-lilas-suave transform hover:scale-105 transition duration-300">
+                <!-- SUBSTITUA PELAS FOTOS REAIS DA AURORA NO TEMA BAILARINA/CONTO DE FADAS -->
+                <div class="rounded-delicate overflow-hidden shadow-graceful border border-ballet-pink transform hover:scale-105 transition duration-300">
                     <img src="https://placehold.co/400x300/FADADD/FFFFFF?text=Foto+Aurora+1" alt="Foto da Aurora 1" class="w-full h-48 object-cover">
                 </div>
-                <div class="rounded-3xl overflow-hidden shadow-romantic border border-lilas-suave transform hover:scale-105 transition duration-300">
-                    <img src="https://placehold.co/400x300/C3E8C3/FFFFFF?text=Foto+Aurora+2" alt="Foto da Aurora 2" class="w-full h-48 object-cover">
+                <div class="rounded-delicate overflow-hidden shadow-graceful border border-ballet-pink transform hover:scale-105 transition duration-300">
+                    <img src="https://placehold.co/400x300/D7F0FC/FFFFFF?text=Foto+Aurora+2" alt="Foto da Aurora 2" class="w-full h-48 object-cover">
                 </div>
-                <div class="rounded-3xl overflow-hidden shadow-romantic border border-lilas-suave transform hover:scale-105 transition duration-300">
-                    <img src="https://placehold.co/400x300/D7C5F0/FFFFFF?text=Foto+Aurora+3" alt="Foto da Aurora 3" class="w-full h-48 object-cover">
+                <div class="rounded-delicate overflow-hidden shadow-graceful border border-ballet-pink transform hover:scale-105 transition duration-300">
+                    <img src="https://placehold.co/400x300/E0CD8F/FFFFFF?text=Foto+Aurora+3" alt="Foto da Aurora 3" class="w-full h-48 object-cover">
                 </div>
-                <div class="rounded-3xl overflow-hidden shadow-romantic border border-lilas-suave transform hover:scale-105 transition duration-300">
-                    <img src="https://placehold.co/400x300/FFF6BF/FFFFFF?text=Foto+Aurora+4" alt="Foto da Aurora 4" class="w-full h-48 object-cover">
+                <div class="rounded-delicate overflow-hidden shadow-graceful border border-ballet-pink transform hover:scale-105 transition duration-300">
+                    <img src="https://placehold.co/400x300/CFCFE0/FFFFFF?text=Foto+Aurora+4" alt="Foto da Aurora 4" class="w-full h-48 object-cover">
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Seção de Recado para Aurora -->
-    <section id="recado" class="py-16 px-4 bg-gradient-section text-texto-principal rounded-3xl mx-4 mb-8 shadow-romantic">
-        <h3 class="text-4xl font-italianno text-destaque-claro text-center mb-10 drop-shadow-sm">
-            Deixe um Recadinho para a Borboletinha!
+    <section id="recado" class="py-16 px-4 bg-gradient-section text-velvet-grey rounded-delicate mx-4 mb-8 shadow-graceful">
+        <h3 class="text-4xl font-playfair text-rose-petal text-center mb-10 drop-shadow-sm">
+            Deixe um Recadinho para a Pequena Bailarina!
         </h3>
-        <div class="bg-white p-8 rounded-3xl shadow-romantic max-w-xl mx-auto border-t-4 border-lilas-suave">
-            <p class="text-center mb-6 font-quicksand text-lg text-texto-principal">
+        <div class="bg-white p-8 rounded-delicate shadow-graceful max-w-xl mx-auto border-t-4 border-lavender-mist">
+            <p class="text-center mb-6 font-quicksand text-lg text-velvet-grey">
                 Querida Aurora, deixe aqui uma mensagem carinhosa para ela ler quando crescer.
             </p>
             <!-- POR FAVOR, SUBSTITUA 'YOUR_FORM_ID_MESSAGE' PELO ID DO SEU FORMULARIO DE MENSAGENS DO FORMSPREE -->
             <form id="message-form" action="https://formspree.io/f/YOUR_FORM_ID_MESSAGE" method="POST" class="space-y-4">
                 <div>
-                    <label for="remetente" class="block text-texto-principal text-sm font-poppins font-bold mb-2">Seu Nome (Opcional):</label>
-                    <input type="text" id="remetente" name="Remetente" class="shadow appearance-none border rounded-lg w-full py-3 px-4 text-texto-principal leading-tight focus:outline-none focus:ring-2 focus:ring-lilas-suave focus:border-transparent">
+                    <label for="remetente" class="block text-velvet-grey text-sm font-quicksand font-bold mb-2">Seu Nome (Opcional):</label>
+                    <input type="text" id="remetente" name="Remetente" class="shadow appearance-none border rounded-lg w-full py-3 px-4 text-velvet-grey leading-tight focus:outline-none focus:ring-2 focus:ring-lavender-mist focus:border-transparent">
                 </div>
                 <div>
-                    <label for="mensagem" class="block text-texto-principal text-sm font-poppins font-bold mb-2">Sua Mensagem:</label>
-                    <textarea id="mensagem" name="Mensagem" rows="6" required class="shadow appearance-none border rounded-lg w-full py-3 px-4 text-texto-principal leading-tight focus:outline-none focus:ring-2 focus:ring-lilas-suave focus:border-transparent"></textarea>
+                    <label for="mensagem" class="block text-velvet-grey text-sm font-quicksand font-bold mb-2">Sua Mensagem:</label>
+                    <textarea id="mensagem" name="Mensagem" rows="6" required class="shadow appearance-none border rounded-lg w-full py-3 px-4 text-velvet-grey leading-tight focus:outline-none focus:ring-2 focus:ring-lavender-mist focus:border-transparent"></textarea>
                 </div>
-                <button type="submit" class="bg-gradient-button text-white font-bold py-3 px-6 rounded-lg w-full text-lg transition duration-300 ease-in-out transform hover:scale-105 shadow-romantic">
+                <button type="submit" class="bg-gradient-button text-white font-bold py-3 px-6 rounded-lg w-full text-lg transition duration-300 ease-in-out transform hover:scale-105 shadow-graceful">
                     Enviar Recado
                 </button>
             </form>
-            <div id="message-status-message" class="mt-4 text-center text-lg font-poppins font-bold text-destaque-claro hidden"></div>
+            <div id="message-status-message" class="mt-4 text-center text-lg font-quicksand font-bold text-rose-petal hidden"></div>
         </div>
     </section>
 
     <!-- Rodapé -->
-    <footer class="bg-gradient-header text-white p-6 mt-12 rounded-t-3xl shadow-romantic font-quicksand relative overflow-hidden">
-        <div class="bottom-decoration-pattern" style="background-image: url('https://placehold.co/1200x80/C3E8C3/FADADD?text=PADRAO+FLORAL+FUNDO');"></div>
+    <footer class="bg-velvet-grey text-white p-6 mt-12 rounded-t-delicate shadow-graceful font-quicksand relative overflow-hidden">
+        <div class="decoration-pattern bottom-decoration-pattern" style="background-image: url('https://placehold.co/1200x100/F2D2D7/D7F0FC?text=PADRAO+FUNDO+BAILARINA');"></div>
         <div class="container mx-auto text-center text-sm z-20 relative">
-            <p class="mb-4">&copy; 2025 O Jardim Encantado da Aurora. Feito com magia e muito carinho.</p>
+            <p class="mb-4">&copy; 2025 O Conto de Fadas da Pequena Bailarina Aurora. Feito com graciosidade e carinho.</p>
             <div class="flex justify-center space-x-6">
-                <a href="https://www.instagram.com/ovictormarketing" target="_blank" class="text-texto-principal hover:text-lilas-suave transition duration-300">Instagram do Papai</a>
-                <a href="https://www.instagram.com/acarlaferreira_" target="_blank" class="text-texto-principal hover:text-lilas-suave transition duration-300">Instagram da Mamãe</a>
-                <a href="tel:+5591982078165" class="text-texto-principal hover:text-lilas-suave transition duration-300">Fale Conosco (91 98207-8165)</a>
+                <a href="https://www.instagram.com/ovictormarketing" target="_blank" class="text-gray-400 hover:text-gold-dust transition duration-300">Instagram do Papai</a>
+                <a href="https://www.instagram.com/acarlaferreira_" target="_blank" class="text-gray-400 hover:text-gold-dust transition duration-300">Instagram da Mamãe</a>
+                <a href="tel:+5591982078165" class="text-gray-400 hover:text-gold-dust transition duration-300">Fale Conosco (91 98207-8165)</a>
             </div>
         </div>
     </footer>
@@ -469,7 +473,7 @@
             }
         });
 
-        // Efeito "Flores abrindo com scroll" (simplificado)
+        // Efeito "Flores abrindo com scroll" (agora, "Elementos aparecendo com scroll")
         // Adiciona a classe 'is-visible' quando o elemento entra na viewport
         const observerOptions = {
             root: null, // viewport
@@ -488,8 +492,14 @@
 
         // Observa as imagens da galeria (você pode adicionar mais elementos com esta classe)
         document.querySelectorAll('#fotos img').forEach(img => {
-            img.classList.add('animate-flower-on-scroll');
+            img.classList.add('animate-on-scroll-effect'); // Aplica a nova classe para animação on scroll
             observer.observe(img);
+        });
+
+        // Observa outras seções/elementos que você queira que apareçam com scroll
+        document.querySelectorAll('section:not(#inicio)').forEach(section => {
+            section.classList.add('animate-on-scroll-effect');
+            observer.observe(section);
         });
 
 
@@ -517,11 +527,11 @@
                 document.getElementById('event-message').classList.remove('hidden'); // Mostra a mensagem
                 document.getElementById('event-message').innerText = 'A festa começou! 🎉';
                 document.getElementById('countdown-section').classList.remove('bg-gradient-section');
-                document.getElementById('countdown-section').classList.add('bg-lilas-suave'); /* Altera para lilás quando termina */
+                document.getElementById('countdown-section').classList.add('bg-pearl-white'); /* Altera para branco perolado quando termina */
             } else {
                 document.getElementById('countdown').classList.remove('hidden');
                 document.getElementById('event-message').classList.add('hidden');
-                document.getElementById('countdown-section').classList.remove('bg-lilas-suave');
+                document.getElementById('countdown-section').classList.remove('bg-pearl-white');
                 document.getElementById('countdown-section').classList.add('bg-gradient-section');
             }
         }, 1000);
@@ -571,7 +581,7 @@
                 const whatsappBtn = document.createElement('a');
                 whatsappBtn.href = whatsappLink;
                 whatsappBtn.target = '_blank';
-                whatsappBtn.className = 'mt-4 inline-block bg-verde-menta hover:bg-lilas-suave text-texto-principal font-bold py-2 px-4 rounded-lg transition duration-300 ease-in-out transform hover:scale-105 shadow-romantic';
+                whatsappBtn.className = 'mt-4 inline-block bg-sky-dream hover:bg-ballet-pink text-velvet-grey font-bold py-2 px-4 rounded-lg transition duration-300 ease-in-out transform hover:scale-105 shadow-graceful';
                 whatsappBtn.innerHTML = 'Enviar Confirmação por WhatsApp <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" class="inline-block h-5 w-5 ml-2">';
                 
                 // Adiciona o botão WhatsApp após a mensagem de sucesso
