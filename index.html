@@ -202,11 +202,14 @@
   <style>
    /* 🌸 Fundo floral animado */
 .bg-floral {
-  background-image: url('https://www.transparenttextures.com/patterns/flowers.png');
-  background-color: #fefaf7;
+  background-image:
+    linear-gradient(to bottom, #fcd8f7, #dbeeff, #e8fad4),
+    url('https://www.transparenttextures.com/patterns/flowers.png');
+  background-blend-mode: overlay;
   background-repeat: repeat;
-  background-size: 240px;
+  background-size: cover, 240px;
   animation: backgroundScroll 60s linear infinite;
+}
 }
 
 @keyframes backgroundScroll {
